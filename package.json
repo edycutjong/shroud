@@ -2,6 +2,17 @@
   "name": "shroud",
   "version": "1.0.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edycutjong/shroud.git"
+  },
+  "bugs": {
+    "url": "https://github.com/edycutjong/shroud/issues"
+  },
+  "homepage": "https://github.com/edycutjong/shroud#readme",
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
