@@ -9,7 +9,16 @@ import { randomBytes } from "node:crypto";
 import * as snarkjs from "snarkjs";
 
 import { buildEddsa, buildPoseidon } from "circomlibjs";
-import { rpc, TransactionBuilder, Networks, Contract, Address, nativeToScVal, Account, scValToNative } from "@stellar/stellar-sdk";
+import {
+  rpc,
+  TransactionBuilder,
+  Networks,
+  Contract,
+  Address,
+  nativeToScVal,
+  Account,
+  scValToNative,
+} from "@stellar/stellar-sdk";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const C = resolve(__dirname, "../circuits/build");
@@ -63,7 +72,10 @@ async function run() {
   const [, commitment, nullifier_hash, deposit_root, compliance_root] = w; // eslint-disable-line
 
   // generate owner signature over nullifier_hash
-  const prvKey = Buffer.from("0001020304050607080900010203040506070809000102030405060708090001", "hex");
+  const prvKey = Buffer.from(
+    "0001020304050607080900010203040506070809000102030405060708090001",
+    "hex",
+  );
   const pubKey = eddsa.prv2pub(prvKey);
   const ownerAx = eddsa.F.toObject(pubKey[0]).toString();
   const ownerAy = eddsa.F.toObject(pubKey[1]).toString();
@@ -90,7 +102,7 @@ async function run() {
     ownerAy,
     sigS,
     sigR8x,
-    sigR8y
+    sigR8y,
   };
 
   // 4) REAL groth16 proof (browser uses the same call)
@@ -119,17 +131,14 @@ async function run() {
   const call = contract.call(
     "verify_proof",
     nativeToScVal(Buffer.from(proofHex, "hex")),
-    nativeToScVal(pubHex.map(p => Buffer.from(p, "hex")))
+    nativeToScVal(pubHex.map((p) => Buffer.from(p, "hex"))),
   );
-  
+
   const source = "GAZV4ZZRKEWHOHWSVKLX7VZVDGJ6GAVSPHMFDBYMS6WQ74DBYP3FOMMX";
-  const tx = new TransactionBuilder(
-    new Account(source, "0"),
-    {
-      fee: "100",
-      networkPassphrase: Networks.TESTNET,
-    }
-  )
+  const tx = new TransactionBuilder(new Account(source, "0"), {
+    fee: "100",
+    networkPassphrase: Networks.TESTNET,
+  })
     .addOperation(call)
     .setTimeout(30)
     .build();

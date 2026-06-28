@@ -49,7 +49,6 @@
 
 ## 🏗️ Architecture & Tech Stack
 
-
 ```mermaid
 sequenceDiagram
     autonumber
