@@ -434,19 +434,11 @@ export default function Home() {
       <header className="border-b border-zinc-800 bg-zinc-950/60 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <svg viewBox="0 0 512 512" className="w-10 h-10">
-              <path
-                d="M 256,64 C 340,64 400,90 416,110 C 416,230 380,360 256,448 C 132,360 96,230 96,110 C 112,90 172,64 256,64 Z"
-                fill="none"
-                stroke="#6366f1"
-                strokeWidth="24"
-              />
-              <circle cx="256" cy="210" r="30" fill="#10b981" />
-              <path
-                d="M 236,220 L 276,220 L 290,320 L 222,320 Z"
-                fill="#10b981"
-              />
-            </svg>
+            <img
+              src="/icon.svg"
+              className="w-10 h-10 filter drop-shadow-[0_0_8px_rgba(99,102,241,0.4)]"
+              alt="Shroud Logo"
+            />
             <span className="font-display text-2xl font-bold tracking-widest text-transparent bg-clip-text bg-linear-to-r from-indigo-500 to-emerald-400">
               SHROUD
             </span>
