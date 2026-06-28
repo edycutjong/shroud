@@ -152,12 +152,11 @@ Performs ZK pairing check for note proofs:
 - `initialize(env: Env, alpha: Bytes, beta: Bytes, gamma: Bytes, delta: Bytes, ic: Vec<Bytes>)`: Set Groth16 verification key points.
 - `verify_proof(env: Env, proof: Bytes, public_inputs: Vec<Bytes>) -> bool`: Verify Groth16 proof (a, b, c) against public inputs.
 
-### 🔭 Roadmap — designed, NOT deployed on the contracts above
+### 🔭 v3 extensions — deployed as dedicated contracts, not wired into the demo web app
 
-> **Honest status:** the deployed pool/verifier handle the v1 shielded `deposit`/`withdraw` Groth16 proof only. The items below are **design-stage**: `initiate_cross_pool_swap` / `complete_cross_pool_swap` are **not deployed**, and `circuits/cross_pool.circom` is **not compiled, proven, or wired** (only the v1 `withdraw` / `gen` circuits ship in `public/zk`).
+> **Honest status:** the v1 pool/verifier handle the shielded `deposit`/`withdraw` Groth16 proof. The v3 cross-pool atomic swap ships as a **dedicated cross-pool verifier** (circuit `circuits/cross_pool.circom`), and the multi-ASP K-of-N federation ships in the `asp_registry` — both verified on Stellar testnet and reproducible from the CLI (see Roadmap below). Neither is **wired into the hosted demo web app**, which demos the v1 flow only.
 
-- `initiate_cross_pool_swap(...)` **[planned v3]** — Cross-pool atomic swap: a ZK proof of value conservation across pools (`input_a × fx_numerator == output_b × fx_denominator`), spending the input nullifier and storing a pending swap keyed by `swap_hash`.
-- `complete_cross_pool_swap(...)` **[planned v3]** — Finalize the swap on the receiving pool, registering the output commitment. Backing circuit `circuits/cross_pool.circom` is design-stage only.
+- `initiate_cross_pool_swap(...)` / `complete_cross_pool_swap(...)` **[v3, shipped]** — Cross-pool atomic swap: a ZK proof of value conservation across pools (`input_a × fx_numerator == output_b × fx_denominator`), spending the input nullifier and registering the output commitment, against a dedicated cross-pool VK on testnet verifier `CDEEOEOHKMDVVIIWOKMQ6L4NZCXFAEDKYPCEI3GGRXUQPSOIMQJGQS6R`. Reproduce: `npm run prove:demo:crosspool`.
 
 ---
 
