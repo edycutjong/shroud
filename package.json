@@ -1,0 +1,68 @@
+{
+  "name": "shroud",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "typecheck": "tsc --noEmit",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write .",
+    "test": "npx tsx scripts/test-runner.js",
+    "test:coverage": "npx nyc npx ts-node -O '{\"module\": \"commonjs\", \"moduleResolution\": \"node\"}' scripts/test-runner.js",
+    "bench": "node scripts/bench.js",
+    "e2e": "playwright test",
+    "e2e:ui": "playwright test --ui",
+    "lighthouse": "lhci autorun",
+    "audit": "npm audit --audit-level=high || true",
+    "ci": "npm run audit && npm run lint && npm run typecheck && npm run test:coverage",
+    "ci:full": "npm run ci && npm run build && npm run e2e",
+    "prove:demo": "node scripts/prove-and-verify.mjs",
+    "prove:demo:crosspool": "node scripts/prove-and-verify-crosspool.mjs",
+    "demo:federation": "node scripts/federation-demo.mjs"
+  },
+  "dependencies": {
+    "@stellar/stellar-sdk": "^16.0.0",
+    "circomlibjs": "^0.1.7",
+    "next": "16.2.9",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@lhci/cli": "^0.14.0",
+    "@playwright/test": "^1.61.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "circomlib": "^2.0.5",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.9",
+    "prettier": "^3.0.0",
+    "snarkjs": "^0.7.6",
+    "tailwindcss": "^4",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.22.4",
+    "typescript": "^5"
+  },
+  "nyc": {
+    "all": true,
+    "include": [
+      "src/sdk/**/*.ts"
+    ],
+    "exclude": [
+      "src/sdk/confetti.ts"
+    ],
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "reporter": [
+      "text",
+      "html"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "deposit_merkle_root": "50337839185172019483123948042153907559082422539682201073721907888537333447045",
+  "compliance_merkle_root": "30333718610349403840274665305021353753840978164648189704422199369425852275070",
+  "nullifier_hash": "19699927708922579821645204471598071652750200178892098155521054700023385675041",
+  "recipient_address": "888",
+  "nullifier": "111",
+  "secret": "222",
+  "deposit_merkle_path": ["333", "444"],
+  "deposit_indices": ["0", "0"],
+  "compliance_address": "555",
+  "compliance_merkle_path": ["666", "777"],
+  "compliance_indices": ["0", "0"]
+}

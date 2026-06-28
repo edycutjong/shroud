@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="80" fill="#10B981"/>
+  <!-- Outer Shield -->
+  <path d="M140,150 L256,110 L372,150 C372,270 256,370 256,370 C256,370 140,270 140,150 Z" fill="none" stroke="white" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Droplet (Privacy Pool) -->
+  <path d="M256,180 C256,180 300,235 300,275 C300,300 280,320 256,320 C232,320 212,300 212,275 C212,235 256,180 256,180 Z" fill="white"/>
+</svg>

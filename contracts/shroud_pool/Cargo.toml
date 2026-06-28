@@ -1,0 +1,13 @@
+[package]
+name = "shroud_pool"
+version = "1.0.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+soroban-sdk = { version = "26.1.0", features = ["hazmat-crypto"] }
+
+[dev-dependencies]
+soroban-sdk = { version = "26.1.0", features = ["testutils", "hazmat-crypto"] }

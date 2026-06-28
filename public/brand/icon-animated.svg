@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="SHROUD icon">
+  
+  <defs>
+    <radialGradient id="void" cx="50%" cy="42%" r="78%">
+      <stop offset="0%" stop-color="#0f0720"/><stop offset="55%" stop-color="#080412"/><stop offset="100%" stop-color="#030208"/>
+    </radialGradient>
+    <radialGradient id="orb" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#ffffff"/><stop offset="35%" stop-color="#c7d2fe"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </radialGradient>
+    <radialGradient id="orbHalo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.8"/><stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.35"/><stop offset="100%" stop-color="#1e1b4b" stop-opacity="0.7"/>
+    </linearGradient>
+    <linearGradient id="title" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c7d2fe"/><stop offset="50%" stop-color="#818cf8"/><stop offset="100%" stop-color="#a5b4fc"/>
+    </linearGradient>
+    <linearGradient id="holoSweep" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a5b4fc" stop-opacity="0"/><stop offset="50%" stop-color="#c7d2fe" stop-opacity="0.9"/><stop offset="100%" stop-color="#a5b4fc" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="reflFadeGrad"><stop offset="0%" stop-color="#fff"/><stop offset="100%" stop-color="#000"/></radialGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="bloom" x="-120%" y="-120%" width="340%" height="340%"><feGaussianBlur stdDeviation="5.5"/></filter>
+    <filter id="bigglow" x="-90%" y="-90%" width="280%" height="280%">
+      <feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softblur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+  </defs>
+  <rect width="512" height="512" rx="30" fill="url(#void)"/>
+  <rect width="512" height="512" rx="30" fill="#1e1b4b" opacity="0.0"/>
+  
+    <g stroke="#6366f1" stroke-width="0.8" opacity="0.18" fill="none"><line x1="256" y1="62" x2="-224" y2="302"/><line x1="256" y1="62" x2="736" y2="302"/><line x1="296" y1="82" x2="-184" y2="322"/><line x1="216" y1="82" x2="696" y2="322"/><line x1="336" y1="102" x2="-144" y2="342"/><line x1="176" y1="102" x2="656" y2="342"/><line x1="376" y1="122" x2="-104" y2="362"/><line x1="136" y1="122" x2="616" y2="362"/><line x1="416" y1="142" x2="-64" y2="382"/><line x1="96" y1="142" x2="576" y2="382"/><line x1="456" y1="162" x2="-24" y2="402"/><line x1="56" y1="162" x2="536" y2="402"/><line x1="496" y1="182" x2="16" y2="422"/><line x1="16" y1="182" x2="496" y2="422"/><line x1="536" y1="202" x2="56" y2="442"/><line x1="-24" y1="202" x2="456" y2="442"/><line x1="576" y1="222" x2="96" y2="462"/><line x1="-64" y1="222" x2="416" y2="462"/><line x1="616" y1="242" x2="136" y2="482"/><line x1="-104" y1="242" x2="376" y2="482"/><line x1="656" y1="262" x2="176" y2="502"/><line x1="-144" y1="262" x2="336" y2="502"/><line x1="696" y1="282" x2="216" y2="522"/><line x1="-184" y1="282" x2="296" y2="522"/><line x1="736" y1="302" x2="256" y2="542"/><line x1="-224" y1="302" x2="256" y2="542"/><animate attributeName="opacity" values="0.18;0.34199999999999997;0.18" dur="5s" repeatCount="indefinite"/></g>
+    <ellipse cx="256" cy="286" rx="124" ry="40" fill="#6366f1" opacity="0.2" filter="url(#bloom)"><animate attributeName="opacity" values="0.12;0.3;0.12" dur="4s" repeatCount="indefinite"/></ellipse>
+    <g opacity="0.16" filter="url(#softblur)" transform="translate(0 576) scale(1 -1)">
+    <g stroke="#a5b4fc" stroke-width="3" opacity="0.16" fill="none" filter="url(#bloom)"><line x1="256" y1="224" x2="376" y2="284"/><line x1="376" y1="284" x2="256" y2="344"/><line x1="256" y1="344" x2="136" y2="284"/><line x1="136" y1="284" x2="256" y2="224"/><line x1="256" y1="104" x2="376" y2="164"/><line x1="376" y1="164" x2="256" y2="224"/><line x1="256" y1="224" x2="136" y2="164"/><line x1="136" y1="164" x2="256" y2="104"/><line x1="256" y1="224" x2="256" y2="104"/><line x1="376" y1="284" x2="376" y2="164"/><line x1="256" y1="344" x2="256" y2="224"/><line x1="136" y1="284" x2="136" y2="164"/></g>
+    <g stroke="#4f46e5" stroke-width="1.1" opacity="0.5" fill="none" stroke-linecap="round"><line x1="256" y1="224" x2="376" y2="284"/><line x1="256" y1="224" x2="256" y2="104"/><line x1="256" y1="224" x2="136" y2="284"/><line x1="216" y1="244" x2="336" y2="304"/><line x1="216" y1="244" x2="216" y2="124"/><line x1="256" y1="184" x2="136" y2="244"/><line x1="176" y1="264" x2="296" y2="324"/><line x1="176" y1="264" x2="176" y2="144"/><line x1="256" y1="144" x2="136" y2="204"/><line x1="136" y1="284" x2="256" y2="344"/><line x1="136" y1="284" x2="136" y2="164"/><line x1="256" y1="104" x2="136" y2="164"/><line x1="256" y1="184" x2="376" y2="244"/><line x1="296" y1="244" x2="296" y2="124"/><line x1="296" y1="244" x2="176" y2="304"/><line x1="216" y1="204" x2="336" y2="264"/><line x1="256" y1="264" x2="256" y2="144"/><line x1="296" y1="204" x2="176" y2="264"/><line x1="176" y1="224" x2="296" y2="284"/><line x1="216" y1="284" x2="216" y2="164"/><line x1="296" y1="164" x2="176" y2="224"/><line x1="136" y1="244" x2="256" y2="304"/><line x1="176" y1="304" x2="176" y2="184"/><line x1="296" y1="124" x2="176" y2="184"/><line x1="256" y1="144" x2="376" y2="204"/><line x1="336" y1="264" x2="336" y2="144"/><line x1="336" y1="264" x2="216" y2="324"/><line x1="216" y1="164" x2="336" y2="224"/><line x1="296" y1="284" x2="296" y2="164"/><line x1="336" y1="224" x2="216" y2="284"/><line x1="176" y1="184" x2="296" y2="244"/><line x1="256" y1="304" x2="256" y2="184"/><line x1="336" y1="184" x2="216" y2="244"/><line x1="136" y1="204" x2="256" y2="264"/><line x1="216" y1="324" x2="216" y2="204"/><line x1="336" y1="144" x2="216" y2="204"/><line x1="256" y1="104" x2="376" y2="164"/><line x1="376" y1="284" x2="376" y2="164"/><line x1="376" y1="284" x2="256" y2="344"/><line x1="216" y1="124" x2="336" y2="184"/><line x1="336" y1="304" x2="336" y2="184"/><line x1="376" y1="244" x2="256" y2="304"/><line x1="176" y1="144" x2="296" y2="204"/><line x1="296" y1="324" x2="296" y2="204"/><line x1="376" y1="204" x2="256" y2="264"/><line x1="136" y1="164" x2="256" y2="224"/><line x1="256" y1="344" x2="256" y2="224"/><line x1="376" y1="164" x2="256" y2="224"/></g>
+    <g stroke="#c7d2fe" stroke-width="2" fill="none" filter="url(#glow)" stroke-linejoin="round"><line x1="256" y1="224" x2="376" y2="284"/><line x1="376" y1="284" x2="256" y2="344"/><line x1="256" y1="344" x2="136" y2="284"/><line x1="136" y1="284" x2="256" y2="224"/><line x1="256" y1="104" x2="376" y2="164"/><line x1="376" y1="164" x2="256" y2="224"/><line x1="256" y1="224" x2="136" y2="164"/><line x1="136" y1="164" x2="256" y2="104"/><line x1="256" y1="224" x2="256" y2="104"/><line x1="376" y1="284" x2="376" y2="164"/><line x1="256" y1="344" x2="256" y2="224"/><line x1="136" y1="284" x2="136" y2="164"/></g>
+    <g fill="#e0e7ff" filter="url(#glow)"><circle cx="256" cy="224" r="3"/><circle cx="376" cy="284" r="3"/><circle cx="256" cy="344" r="3"/><circle cx="136" cy="284" r="3"/><circle cx="256" cy="104" r="3"/><circle cx="376" cy="164" r="3"/><circle cx="256" cy="224" r="3"/><circle cx="136" cy="164" r="3"/></g><g filter="url(#glow)" stroke="#c7d2fe" stroke-width="1.2" stroke-linejoin="round">
+    <polygon points="320,148 352,164 320,180 288,164" fill="#818cf8" fill-opacity="0.7"/>
+    <polygon points="288,196 288,164 320,180 320,212" fill="#4338ca" fill-opacity="0.7"/>
+    <polygon points="320,212 320,180 352,164 352,196" fill="#3730a3" fill-opacity="0.7"/></g><g filter="url(#glow)" stroke="#c7d2fe" stroke-width="1.2" stroke-linejoin="round">
+    <polygon points="192,84 224,100 192,116 160,100" fill="#818cf8" fill-opacity="0.7"/>
+    <polygon points="160,132 160,100 192,116 192,148" fill="#4338ca" fill-opacity="0.7"/>
+    <polygon points="192,148 192,116 224,100 224,132" fill="#3730a3" fill-opacity="0.7"/></g><g filter="url(#glow)" stroke="#c7d2fe" stroke-width="1.2" stroke-linejoin="round">
+    <polygon points="192,148 224,164 192,180 160,164" fill="#818cf8" fill-opacity="0.7"/>
+    <polygon points="160,196 160,164 192,180 192,212" fill="#4338ca" fill-opacity="0.7"/>
+    <polygon points="192,212 192,180 224,164 224,196" fill="#3730a3" fill-opacity="0.7"/></g><g filter="url(#glow)" stroke="#c7d2fe" stroke-width="1.2" stroke-linejoin="round">
+    <polygon points="320,84 352,100 320,116 288,100" fill="#818cf8" fill-opacity="0.7"/>
+    <polygon points="288,132 288,100 320,116 320,148" fill="#4338ca" fill-opacity="0.7"/>
+    <polygon points="320,148 320,116 352,100 352,132" fill="#3730a3" fill-opacity="0.7"/></g></g>
+    
+    <polygon points="16,288 256,408 256,424 16,304" fill="#240310" fill-opacity="0.9" stroke="#4f46e5" stroke-width="1"/>
+    <polygon points="256,408 496,288 496,304 256,424" fill="#190209" fill-opacity="0.9" stroke="#4f46e5" stroke-width="1"/>
+    <polygon points="256,168 496,288 256,408 16,288" fill="url(#glass)" stroke="#a5b4fc" stroke-width="1.5" filter="url(#glow)"/>
+    <g stroke="#6366f1" stroke-width="0.6" opacity="0.4" fill="none"><line x1="256" y1="168" x2="16" y2="288"/><line x1="256" y1="168" x2="496" y2="288"/><line x1="276" y1="178" x2="36" y2="298"/><line x1="236" y1="178" x2="476" y2="298"/><line x1="296" y1="188" x2="56" y2="308"/><line x1="216" y1="188" x2="456" y2="308"/><line x1="316" y1="198" x2="76" y2="318"/><line x1="196" y1="198" x2="436" y2="318"/><line x1="336" y1="208" x2="96" y2="328"/><line x1="176" y1="208" x2="416" y2="328"/><line x1="356" y1="218" x2="116" y2="338"/><line x1="156" y1="218" x2="396" y2="338"/><line x1="376" y1="228" x2="136" y2="348"/><line x1="136" y1="228" x2="376" y2="348"/><line x1="396" y1="238" x2="156" y2="358"/><line x1="116" y1="238" x2="356" y2="358"/><line x1="416" y1="248" x2="176" y2="368"/><line x1="96" y1="248" x2="336" y2="368"/><line x1="436" y1="258" x2="196" y2="378"/><line x1="76" y1="258" x2="316" y2="378"/><line x1="456" y1="268" x2="216" y2="388"/><line x1="56" y1="268" x2="296" y2="388"/><line x1="476" y1="278" x2="236" y2="398"/><line x1="36" y1="278" x2="276" y2="398"/><line x1="496" y1="288" x2="256" y2="408"/><line x1="16" y1="288" x2="256" y2="408"/></g>
+    <g transform="translate(256 288) scale(1 0.5)"><g><animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="14s" repeatCount="indefinite"/><circle r="82" fill="none" stroke="#a5b4fc" stroke-width="2" stroke-dasharray="10 14" opacity="0.7" filter="url(#glow)"/></g></g><g transform="translate(256 288) scale(1 0.5)"><g><animateTransform attributeName="transform" type="rotate" from="360 0 0" to="0 0 0" dur="22s" repeatCount="indefinite"/><circle r="100" fill="none" stroke="#a5b4fc" stroke-width="1.5" stroke-dasharray="3 18" opacity="0.5" filter="url(#glow)"/></g></g>
+    <ellipse cx="256" cy="288" rx="20" ry="10" fill="none" stroke="#c7d2fe" stroke-width="2" filter="url(#glow)">
+      <animate attributeName="rx" values="16;120" dur="4.2s" begin="0.00s" repeatCount="indefinite"/>
+      <animate attributeName="ry" values="8;60" dur="4.2s" begin="0.00s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.85;0" dur="4.2s" begin="0.00s" repeatCount="indefinite"/></ellipse><ellipse cx="256" cy="288" rx="20" ry="10" fill="none" stroke="#c7d2fe" stroke-width="2" filter="url(#glow)">
+      <animate attributeName="rx" values="16;120" dur="4.2s" begin="1.40s" repeatCount="indefinite"/>
+      <animate attributeName="ry" values="8;60" dur="4.2s" begin="1.40s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.85;0" dur="4.2s" begin="1.40s" repeatCount="indefinite"/></ellipse><ellipse cx="256" cy="288" rx="20" ry="10" fill="none" stroke="#c7d2fe" stroke-width="2" filter="url(#glow)">
+      <animate attributeName="rx" values="16;120" dur="4.2s" begin="2.80s" repeatCount="indefinite"/>
+      <animate attributeName="ry" values="8;60" dur="4.2s" begin="2.80s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.85;0" dur="4.2s" begin="2.80s" repeatCount="indefinite"/></ellipse>
+    <line x1="256" y1="216" x2="448" y2="200" stroke="#6366f1" stroke-width="1" opacity="0.55" stroke-dasharray="3 4"><animate attributeName="stroke-dashoffset" values="24;0" dur="1.4s" repeatCount="indefinite"/></line><circle r="2.6" cx="256" cy="216" fill="#e0e7ff" filter="url(#glow)">
+        <animateTransform attributeName="transform" type="translate" values="0 0; 192.00 -16.00" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/></circle><line x1="256" y1="216" x2="80" y2="152" stroke="#6366f1" stroke-width="1" opacity="0.55" stroke-dasharray="3 4"><animate attributeName="stroke-dashoffset" values="24;0" dur="1.7s" repeatCount="indefinite"/></line><circle r="2.6" cx="256" cy="216" fill="#e0e7ff" filter="url(#glow)">
+        <animateTransform attributeName="transform" type="translate" values="0 0; -176.00 -64.00" dur="2.4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;0" dur="2.4s" repeatCount="indefinite"/></circle><line x1="256" y1="216" x2="264" y2="212" stroke="#6366f1" stroke-width="1" opacity="0.55" stroke-dasharray="3 4"><animate attributeName="stroke-dashoffset" values="24;0" dur="2s" repeatCount="indefinite"/></line><circle r="2.6" cx="256" cy="216" fill="#e0e7ff" filter="url(#glow)">
+        <animateTransform attributeName="transform" type="translate" values="0 0; 8.00 -4.00" dur="2.8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;0" dur="2.8s" repeatCount="indefinite"/></circle><line x1="256" y1="216" x2="264" y2="44" stroke="#6366f1" stroke-width="1" opacity="0.55" stroke-dasharray="3 4"><animate attributeName="stroke-dashoffset" values="24;0" dur="2.3s" repeatCount="indefinite"/></line><circle r="2.6" cx="256" cy="216" fill="#e0e7ff" filter="url(#glow)">
+        <animateTransform attributeName="transform" type="translate" values="0 0; 8.00 -172.00" dur="3.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;0" dur="3.2s" repeatCount="indefinite"/></circle>
+    <g><animateTransform attributeName="transform" type="translate" values="0 0; 0 -6; 0 0" dur="5s" repeatCount="indefinite" additive="sum"/>
+    <g stroke="#a5b4fc" stroke-width="3" opacity="0.16" fill="none" filter="url(#bloom)"><line x1="256" y1="224" x2="376" y2="284"/><line x1="376" y1="284" x2="256" y2="344"/><line x1="256" y1="344" x2="136" y2="284"/><line x1="136" y1="284" x2="256" y2="224"/><line x1="256" y1="104" x2="376" y2="164"/><line x1="376" y1="164" x2="256" y2="224"/><line x1="256" y1="224" x2="136" y2="164"/><line x1="136" y1="164" x2="256" y2="104"/><line x1="256" y1="224" x2="256" y2="104"/><line x1="376" y1="284" x2="376" y2="164"/><line x1="256" y1="344" x2="256" y2="224"/><line x1="136" y1="284" x2="136" y2="164"/></g>
+    <g stroke="#4f46e5" stroke-width="1.1" opacity="0.5" fill="none" stroke-linecap="round"><line x1="256" y1="224" x2="376" y2="284"/><line x1="256" y1="224" x2="256" y2="104"/><line x1="256" y1="224" x2="136" y2="284"/><line x1="216" y1="244" x2="336" y2="304"/><line x1="216" y1="244" x2="216" y2="124"/><line x1="256" y1="184" x2="136" y2="244"/><line x1="176" y1="264" x2="296" y2="324"/><line x1="176" y1="264" x2="176" y2="144"/><line x1="256" y1="144" x2="136" y2="204"/><line x1="136" y1="284" x2="256" y2="344"/><line x1="136" y1="284" x2="136" y2="164"/><line x1="256" y1="104" x2="136" y2="164"/><line x1="256" y1="184" x2="376" y2="244"/><line x1="296" y1="244" x2="296" y2="124"/><line x1="296" y1="244" x2="176" y2="304"/><line x1="216" y1="204" x2="336" y2="264"/><line x1="256" y1="264" x2="256" y2="144"/><line x1="296" y1="204" x2="176" y2="264"/><line x1="176" y1="224" x2="296" y2="284"/><line x1="216" y1="284" x2="216" y2="164"/><line x1="296" y1="164" x2="176" y2="224"/><line x1="136" y1="244" x2="256" y2="304"/><line x1="176" y1="304" x2="176" y2="184"/><line x1="296" y1="124" x2="176" y2="184"/><line x1="256" y1="144" x2="376" y2="204"/><line x1="336" y1="264" x2="336" y2="144"/><line x1="336" y1="264" x2="216" y2="324"/><line x1="216" y1="164" x2="336" y2="224"/><line x1="296" y1="284" x2="296" y2="164"/><line x1="336" y1="224" x2="216" y2="284"/><line x1="176" y1="184" x2="296" y2="244"/><line x1="256" y1="304" x2="256" y2="184"/><line x1="336" y1="184" x2="216" y2="244"/><line x1="136" y1="204" x2="256" y2="264"/><line x1="216" y1="324" x2="216" y2="204"/><line x1="336" y1="144" x2="216" y2="204"/><line x1="256" y1="104" x2="376" y2="164"/><line x1="376" y1="284" x2="376" y2="164"/><line x1="376" y1="284" x2="256" y2="344"/><line x1="216" y1="124" x2="336" y2="184"/><line x1="336" y1="304" x2="336" y2="184"/><line x1="376" y1="244" x2="256" y2="304"/><line x1="176" y1="144" x2="296" y2="204"/><line x1="296" y1="324" x2="296" y2="204"/><line x1="376" y1="204" x2="256" y2="264"/><line x1="136" y1="164" x2="256" y2="224"/><line x1="256" y1="344" x2="256" y2="224"/><line x1="376" y1="164" x2="256" y2="224"/></g>
+    <g stroke="#c7d2fe" stroke-width="2" fill="none" filter="url(#glow)" stroke-linejoin="round"><line x1="256" y1="224" x2="376" y2="284"/><line x1="376" y1="284" x2="256" y2="344"/><line x1="256" y1="344" x2="136" y2="284"/><line x1="136" y1="284" x2="256" y2="224"/><line x1="256" y1="104" x2="376" y2="164"/><line x1="376" y1="164" x2="256" y2="224"/><line x1="256" y1="224" x2="136" y2="164"/><line x1="136" y1="164" x2="256" y2="104"/><line x1="256" y1="224" x2="256" y2="104"/><line x1="376" y1="284" x2="376" y2="164"/><line x1="256" y1="344" x2="256" y2="224"/><line x1="136" y1="284" x2="136" y2="164"/></g>
+    <g fill="#e0e7ff" filter="url(#glow)"><circle cx="256" cy="224" r="3"/><circle cx="376" cy="284" r="3"/><circle cx="256" cy="344" r="3"/><circle cx="136" cy="284" r="3"/><circle cx="256" cy="104" r="3"/><circle cx="376" cy="164" r="3"/><circle cx="256" cy="224" r="3"/><circle cx="136" cy="164" r="3"/></g><g filter="url(#glow)" stroke="#c7d2fe" stroke-width="1.2" stroke-linejoin="round">
+    <polygon points="320,148 352,164 320,180 288,164" fill="#818cf8" fill-opacity="0.7"/>
+    <polygon points="288,196 288,164 320,180 320,212" fill="#4338ca" fill-opacity="0.7"/>
+    <polygon points="320,212 320,180 352,164 352,196" fill="#3730a3" fill-opacity="0.7"/></g><g filter="url(#glow)" stroke="#c7d2fe" stroke-width="1.2" stroke-linejoin="round">
+    <polygon points="192,84 224,100 192,116 160,100" fill="#818cf8" fill-opacity="0.7"/>
+    <polygon points="160,132 160,100 192,116 192,148" fill="#4338ca" fill-opacity="0.7"/>
+    <polygon points="192,148 192,116 224,100 224,132" fill="#3730a3" fill-opacity="0.7"/></g><g filter="url(#glow)" stroke="#c7d2fe" stroke-width="1.2" stroke-linejoin="round">
+    <polygon points="192,148 224,164 192,180 160,164" fill="#818cf8" fill-opacity="0.7"/>
+    <polygon points="160,196 160,164 192,180 192,212" fill="#4338ca" fill-opacity="0.7"/>
+    <polygon points="192,212 192,180 224,164 224,196" fill="#3730a3" fill-opacity="0.7"/></g><g filter="url(#glow)" stroke="#c7d2fe" stroke-width="1.2" stroke-linejoin="round">
+    <polygon points="320,84 352,100 320,116 288,100" fill="#818cf8" fill-opacity="0.7"/>
+    <polygon points="288,132 288,100 320,116 320,148" fill="#4338ca" fill-opacity="0.7"/>
+    <polygon points="320,148 320,116 352,100 352,132" fill="#3730a3" fill-opacity="0.7"/></g><g>
+    <circle cx="256" cy="224" r="20" fill="url(#orbHalo)" opacity="0.38" filter="url(#bloom)"><animate attributeName="r" values="16;24;16" dur="2.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.4;0.12;0.4" dur="2.6s" repeatCount="indefinite"/></circle>
+    <circle cx="256" cy="224" r="11" fill="url(#orb)" filter="url(#glow)"><animate attributeName="r" values="9;13;9" dur="2.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.92;1;0.92" dur="2.6s" repeatCount="indefinite"/></circle>
+  </g></g>
+    <g><animateTransform attributeName="transform" type="translate" values="0 0; 0 -8; 0 0" dur="3s" repeatCount="indefinite" additive="sum"/><animateTransform attributeName="transform" type="rotate" values="0;360" dur="18s" repeatCount="indefinite" additive="sum"/><g filter="url(#glow)" stroke="#c7d2fe" stroke-width="1.2" stroke-linejoin="round">
+    <polygon points="448,174.4 473.6,187.2 448,200 422.4,187.2" fill="#818cf8" fill-opacity="0.7"/>
+    <polygon points="422.4,212.8 422.4,187.2 448,200 448,225.6" fill="#4338ca" fill-opacity="0.7"/>
+    <polygon points="448,225.6 448,200 473.6,187.2 473.6,212.8" fill="#3730a3" fill-opacity="0.7"/></g></g><g><animateTransform attributeName="transform" type="translate" values="0 0; 0 -8; 0 0" dur="3.7s" repeatCount="indefinite" additive="sum"/><animateTransform attributeName="transform" type="rotate" values="0;360" dur="22s" repeatCount="indefinite" additive="sum"/><g filter="url(#glow)" stroke="#c7d2fe" stroke-width="1.2" stroke-linejoin="round">
+    <polygon points="80,126.4 105.6,139.2 80,152 54.4,139.2" fill="#818cf8" fill-opacity="0.7"/>
+    <polygon points="54.4,164.8 54.4,139.2 80,152 80,177.6" fill="#4338ca" fill-opacity="0.7"/>
+    <polygon points="80,177.6 80,152 105.6,139.2 105.6,164.8" fill="#3730a3" fill-opacity="0.7"/></g></g><g><animateTransform attributeName="transform" type="translate" values="0 0; 0 -8; 0 0" dur="4.4s" repeatCount="indefinite" additive="sum"/><animateTransform attributeName="transform" type="rotate" values="0;360" dur="26s" repeatCount="indefinite" additive="sum"/><g filter="url(#glow)" stroke="#c7d2fe" stroke-width="1.2" stroke-linejoin="round">
+    <polygon points="264,186.4 289.6,199.2 264,212 238.4,199.2" fill="#818cf8" fill-opacity="0.7"/>
+    <polygon points="238.4,224.8 238.4,199.2 264,212 264,237.6" fill="#4338ca" fill-opacity="0.7"/>
+    <polygon points="264,237.6 264,212 289.6,199.2 289.6,224.8" fill="#3730a3" fill-opacity="0.7"/></g></g><g><animateTransform attributeName="transform" type="translate" values="0 0; 0 -8; 0 0" dur="5.1s" repeatCount="indefinite" additive="sum"/><animateTransform attributeName="transform" type="rotate" values="0;360" dur="30s" repeatCount="indefinite" additive="sum"/><g filter="url(#glow)" stroke="#c7d2fe" stroke-width="1.2" stroke-linejoin="round">
+    <polygon points="264,18.4 289.6,31.2 264,44 238.4,31.2" fill="#818cf8" fill-opacity="0.7"/>
+    <polygon points="238.4,56.8 238.4,31.2 264,44 264,69.6" fill="#4338ca" fill-opacity="0.7"/>
+    <polygon points="264,69.6 264,44 289.6,31.2 289.6,56.8" fill="#3730a3" fill-opacity="0.7"/></g></g>
+    <circle cx="256" cy="354.86" r="2.9" fill="#c7d2fe" filter="url(#glow)">
+        <animate attributeName="cy" values="354.86;208.9" dur="5.53s" begin="3.38s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.9;0" dur="5.53s" begin="3.38s" repeatCount="indefinite"/></circle><circle cx="259.41" cy="221.65" r="2.8" fill="#c7d2fe" filter="url(#glow)">
+        <animate attributeName="cy" values="221.65;139.8" dur="3.11s" begin="3.21s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.9;0" dur="3.11s" begin="3.21s" repeatCount="indefinite"/></circle><circle cx="266.16" cy="266.91" r="1.6" fill="#c7d2fe" filter="url(#glow)">
+        <animate attributeName="cy" values="266.91;160.6" dur="5.88s" begin="1.98s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.9;0" dur="5.88s" begin="1.98s" repeatCount="indefinite"/></circle><circle cx="104.29" cy="269.1" r="1.7" fill="#c7d2fe" filter="url(#glow)">
+        <animate attributeName="cy" values="269.1;172.6" dur="3.39s" begin="0.41s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.9;0" dur="3.39s" begin="0.41s" repeatCount="indefinite"/></circle><circle cx="348.17" cy="246.74" r="2.6" fill="#c7d2fe" filter="url(#glow)">
+        <animate attributeName="cy" values="246.74;104.6" dur="4.73s" begin="1.19s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.9;0" dur="4.73s" begin="1.19s" repeatCount="indefinite"/></circle><circle cx="405.48" cy="271.85" r="2.1" fill="#c7d2fe" filter="url(#glow)">
+        <animate attributeName="cy" values="271.85;125.3" dur="3.31s" begin="1.95s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.9;0" dur="3.31s" begin="1.95s" repeatCount="indefinite"/></circle><circle cx="279.04" cy="366.55" r="2.2" fill="#c7d2fe" filter="url(#glow)">
+        <animate attributeName="cy" values="366.55;231.7" dur="4.21s" begin="3.85s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.9;0" dur="4.21s" begin="3.85s" repeatCount="indefinite"/></circle><circle cx="240.74" cy="227.58" r="2.6" fill="#c7d2fe" filter="url(#glow)">
+        <animate attributeName="cy" values="227.58;71.0" dur="5.38s" begin="0.22s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.9;0" dur="5.38s" begin="0.22s" repeatCount="indefinite"/></circle><circle cx="295.7" cy="348.35" r="2.1" fill="#c7d2fe" filter="url(#glow)">
+        <animate attributeName="cy" values="348.35;234.2" dur="4.50s" begin="2.82s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.9;0" dur="4.50s" begin="2.82s" repeatCount="indefinite"/></circle><circle cx="89.93" cy="295.27" r="2.2" fill="#c7d2fe" filter="url(#glow)">
+        <animate attributeName="cy" values="295.27;159.3" dur="3.88s" begin="3.40s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.9;0" dur="3.88s" begin="3.40s" repeatCount="indefinite"/></circle><circle cx="310.98" cy="257.38" r="2.3" fill="#c7d2fe" filter="url(#glow)">
+        <animate attributeName="cy" values="257.38;157.6" dur="5.89s" begin="1.01s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.9;0" dur="5.89s" begin="1.01s" repeatCount="indefinite"/></circle><circle cx="233.41" cy="225.07" r="2.0" fill="#c7d2fe" filter="url(#glow)">
+        <animate attributeName="cy" values="225.07;126.4" dur="3.87s" begin="3.17s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.9;0" dur="3.87s" begin="3.17s" repeatCount="indefinite"/></circle><circle cx="179.53" cy="339.47" r="3.0" fill="#c7d2fe" filter="url(#glow)">
+        <animate attributeName="cy" values="339.47;225.8" dur="5.41s" begin="0.90s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.9;0" dur="5.41s" begin="0.90s" repeatCount="indefinite"/></circle><circle cx="284.53" cy="330.39" r="2.5" fill="#c7d2fe" filter="url(#glow)">
+        <animate attributeName="cy" values="330.39;220.3" dur="3.51s" begin="1.65s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.9;0" dur="3.51s" begin="1.65s" repeatCount="indefinite"/></circle>
+  <g><rect x="0" y="-30" width="512" height="30" fill="url(#holoSweep)" opacity="0.35">
+    <animate attributeName="y" values="30;470" dur="5.5s" repeatCount="indefinite"/></rect>
+  <rect x="0" y="0" width="512" height="2" fill="#c7d2fe" filter="url(#glow)">
+    <animate attributeName="y" values="30;470" dur="5.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0.8;0" dur="5.5s" repeatCount="indefinite"/></rect></g>
+  <path d="M 22 68 L 22 22 L 68 22" fill="none" stroke="#a5b4fc" stroke-width="2.5" opacity="0.8" filter="url(#glow)"/><path d="M 490 68 L 490 22 L 444 22" fill="none" stroke="#a5b4fc" stroke-width="2.5" opacity="0.8" filter="url(#glow)"/><path d="M 22 444 L 22 490 L 68 490" fill="none" stroke="#a5b4fc" stroke-width="2.5" opacity="0.8" filter="url(#glow)"/><path d="M 490 444 L 490 490 L 444 490" fill="none" stroke="#a5b4fc" stroke-width="2.5" opacity="0.8" filter="url(#glow)"/>
+  <rect x="3" y="3" width="506" height="506" rx="28" fill="none" stroke="#4f46e5" stroke-width="2" opacity="0.55"/>
+  <text x="256" y="438" text-anchor="middle" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-weight="800" font-size="42" letter-spacing="7" fill="url(#title)" filter="url(#bigglow)">SHROUD<animate attributeName="opacity" values="0.2;1;0.85;1" dur="2.4s" repeatCount="indefinite"/></text>
+</svg>

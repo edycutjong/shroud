@@ -1,0 +1,16 @@
+[workspace]
+resolver = "2"
+members = [
+    "contracts/shroud_pool",
+    "contracts/asp_registry",
+    "contracts/groth16_verifier"
+]
+
+[profile.release]
+opt-level = "z"
+overflow-checks = true
+debug = false
+strip = true
+lto = true
+codegen-units = 1
+panic = "abort"

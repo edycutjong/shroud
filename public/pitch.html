@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shroud · Pitch Deck</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      .font-display {
+        font-family: "Outfit", sans-serif;
+      }
+      .mono {
+        font-family: "JetBrains Mono", monospace;
+      }
+      .slide {
+        display: none;
+        animation: fade 0.4s ease;
+      }
+      .slide.active {
+        display: flex;
+      }
+      @keyframes fade {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      ::-webkit-scrollbar {
+        width: 0;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-[#09090b] text-zinc-100 h-full overflow-hidden flex flex-col justify-between"
+  >
+    <div
+      class="flex-1 flex items-center justify-center p-6 md:p-10 relative overflow-y-auto"
+    >
+      <!-- 1 Title -->
+      <div
+        class="slide active max-w-5xl w-full flex-col md:flex-row items-center justify-between gap-12"
+      >
+        <div class="flex-1 flex flex-col items-start text-left">
+          <span class="text-xs mono tracking-widest text-red-500 uppercase mb-4"
+            >Slide 01 // Title</span
+          >
+          <h1
+            class="text-6xl md:text-7xl font-black tracking-tighter leading-none mb-6"
+          >
+            SHROUD <span class="text-red-500">🛡️</span>
+          </h1>
+          <p class="text-2xl font-display text-zinc-200 mb-4">
+            Privacy that regulators can live with.
+          </p>
+          <p class="text-zinc-400 text-lg max-w-md">
+            A USDC privacy pool where you can only withdraw if you
+            <span class="text-red-400"
+              >prove you're on the compliance allowlist</span
+            >
+            — private for honest users, locked for sanctioned addresses.
+          </p>
+        </div>
+        <div
+          class="flex-1 bg-zinc-900 border border-zinc-800 rounded-2xl p-8 max-w-md w-full relative"
+        >
+          <div
+            class="absolute inset-0 bg-linear-to-br from-red-500/10 to-transparent rounded-2xl"
+          ></div>
+          <span class="text-[10px] mono text-zinc-500 block mb-3 uppercase"
+            >Soroban · ASP Gateway · BN254</span
+          >
+          <p class="text-sm mono text-zinc-300 leading-relaxed">
+            withdraw(proof, nullifier, recipient)<br /><span
+              class="text-emerald-400"
+              >→ compliant → fresh wallet ✓</span
+            ><br /><span class="text-red-400">→ sanctioned → locked out ✗</span>
+          </p>
+          <p class="text-[10px] mono text-zinc-600 mt-4">
+            Stellar Hacks: Real-World ZK · DoraHacks
+          </p>
+        </div>
+      </div>
+
+      <!-- 2 Problem -->
+      <div class="slide max-w-5xl w-full flex-col text-left">
+        <span class="text-xs mono tracking-widest text-red-500 uppercase mb-4"
+          >Slide 02 // The Problem</span
+        >
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-8">
+          Privacy and compliance are at war — both sides lose.
+        </h2>
+        <div class="grid md:grid-cols-2 gap-5 max-w-4xl">
+          <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6">
+            <p class="text-red-400 font-display font-bold mb-2">
+              Mixers are uncompliant
+            </p>
+            <p class="text-zinc-400 text-sm">
+              Tornado-style pools let sanctioned actors mix funds → global
+              blacklists. The whole tool becomes radioactive and taints every
+              user.
+            </p>
+          </div>
+          <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6">
+            <p class="text-red-400 font-display font-bold mb-2">
+              So institutions can't use privacy
+            </p>
+            <p class="text-zinc-400 text-sm">
+              Regulated firms are forced onto transparent rails, leaking payroll
+              and treasury flows to anyone with a block explorer.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Solution -->
+      <div class="slide max-w-5xl w-full flex-col text-left">
+        <span class="text-xs mono tracking-widest text-red-500 uppercase mb-4"
+          >Slide 03 // The Solution</span
+        >
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+          Make privacy
+          <span class="text-red-500">conditional on compliance</span>.
+        </h2>
+        <p class="text-zinc-300 text-lg max-w-3xl mb-8">
+          Shroud implements the SDF's recommended
+          <span class="text-red-400"
+            >Association Set Provider (ASP) gateway</span
+          >. Every withdrawal proves allowlist membership — in zero knowledge.
+        </p>
+        <div class="grid md:grid-cols-4 gap-4">
+          <div class="border-l-2 border-red-500 pl-4">
+            <p class="font-display font-bold">✅ Gated</p>
+            <p class="text-zinc-400 text-sm">sanctioned addresses locked out</p>
+          </div>
+          <div class="border-l-2 border-red-500 pl-4">
+            <p class="font-display font-bold">🔒 Private</p>
+            <p class="text-zinc-400 text-sm">withdraw to a fresh wallet</p>
+          </div>
+          <div class="border-l-2 border-red-500 pl-4">
+            <p class="font-display font-bold">🖊️ Owner-bound</p>
+            <p class="text-zinc-400 text-sm">EdDSA stops note theft</p>
+          </div>
+          <div class="border-l-2 border-red-500 pl-4">
+            <p class="font-display font-bold">⛽ Gasless</p>
+            <p class="text-zinc-400 text-sm">relayer paid on-chain</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Demo -->
+      <div class="slide max-w-5xl w-full flex-col text-left">
+        <span class="text-xs mono tracking-widest text-red-500 uppercase mb-4"
+          >Slide 04 // Live Demo & Flow</span
+        >
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+          What the judges see
+        </h2>
+        <div
+          class="bg-black border border-zinc-800 rounded-xl p-6 mono text-sm leading-relaxed max-w-3xl"
+        >
+          <p class="text-zinc-500">$ npm run prove:demo</p>
+          <p class="text-zinc-300">
+            1. ASP updates compliance root (ASPRegistry)
+          </p>
+          <p class="text-zinc-300">
+            2. deposit 100 USDC + commitment (ShroudPool)
+          </p>
+          <p class="text-zinc-300">
+            3. allowlist path → Groth16 proof + EdDSA(nullifier)
+          </p>
+          <p class="text-zinc-300">
+            4. relayer submits proof + nullifier + recipient
+          </p>
+          <p class="text-zinc-300">
+            5. verify root active → BN254 pairing on-chain
+          </p>
+          <p class="text-emerald-400">compliant → payout to fresh wallet ✓</p>
+          <p class="text-red-400">non-compliant / tampered → rejected ✗</p>
+        </div>
+        <p class="text-zinc-500 text-sm mt-4 max-w-3xl">
+          Compliance root checked against the
+          <span class="text-red-400">live</span> ASP registry on-chain. Hosted
+          app = UX sandbox; load-bearing ZK =
+          <span class="text-red-400 mono">prove:demo</span> + deployed
+          contracts.
+        </p>
+      </div>
+
+      <!-- 5 Architecture -->
+      <div class="slide max-w-5xl w-full flex-col text-left">
+        <span class="text-xs mono tracking-widest text-red-500 uppercase mb-4"
+          >Slide 05 // Architecture & Tech</span
+        >
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+          The contract binds the proof to the live allowlist.
+        </h2>
+        <div class="grid md:grid-cols-2 gap-4 max-w-4xl">
+          <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-5">
+            <p class="text-red-400 mono text-xs uppercase mb-1">ZK Circuit</p>
+            <p class="text-zinc-300 text-sm">
+              Circom/Groth16 bn128 · deposit + compliance Merkle membership +
+              nullifier + EdDSA over nullifier · nPublic = 6
+            </p>
+          </div>
+          <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-5">
+            <p class="text-red-400 mono text-xs uppercase mb-1">Pool</p>
+            <p class="text-zinc-300 text-sm">
+              <span class="mono">bn254().pairing_check()</span> (P25/26) ·
+              compliance_root bound to live
+              <span class="mono">ASPRegistry.get_root</span> · nullifier map ·
+              real relayer fee transfer
+            </p>
+          </div>
+          <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-5">
+            <p class="text-red-400 mono text-xs uppercase mb-1">Registry</p>
+            <p class="text-zinc-300 text-sm">
+              <span class="mono">require_auth()</span> gates root rotation to
+              the authorized ASP admin
+            </p>
+          </div>
+          <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-5">
+            <p class="text-red-400 mono text-xs uppercase mb-1">App</p>
+            <p class="text-zinc-300 text-sm">
+              Next.js 16 / React 19 / Supabase · deposit events build paths
+              dynamically
+            </p>
+          </div>
+        </div>
+        <p class="text-zinc-500 text-sm mt-4">
+          A stale or forged allowlist can't pass — the contract checks the
+          proof's root against the registry's current root. EdDSA stops a stolen
+          note from being drained.
+        </p>
+      </div>
+
+      <!-- 6 Market -->
+      <div class="slide max-w-5xl w-full flex-col text-left">
+        <span class="text-xs mono tracking-widest text-red-500 uppercase mb-4"
+          >Slide 06 // Market & Impact</span
+        >
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-8">
+          The unlock for institutional on-chain finance.
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6 max-w-4xl">
+          <div>
+            <p class="text-4xl font-black text-red-500 font-display">
+              Institutional DeFi
+            </p>
+            <p class="text-zinc-400 text-sm mt-2">
+              tokenized assets moving on-chain — transparent ledgers are a
+              non-starter for payroll & treasury.
+            </p>
+          </div>
+          <div>
+            <p class="text-4xl font-black text-red-500 font-display">
+              OFAC reality
+            </p>
+            <p class="text-zinc-400 text-sm mt-2">
+              sanctions proved uncompliant privacy is a dead end. The market
+              needs a compliance gate baked in.
+            </p>
+          </div>
+          <div>
+            <p class="text-4xl font-black text-red-500 font-display">
+              SDF-aligned
+            </p>
+            <p class="text-zinc-400 text-sm mt-2">
+              ASP is the SDF's own recommended pattern — Shroud ships it.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 Business -->
+      <div class="slide max-w-5xl w-full flex-col text-left">
+        <span class="text-xs mono tracking-widest text-red-500 uppercase mb-4"
+          >Slide 07 // Business Model</span
+        >
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-8">
+          How Shroud survives the hackathon
+        </h2>
+        <div class="space-y-4 max-w-3xl">
+          <div class="flex gap-4 items-start">
+            <span class="text-red-500 font-display font-black">01</span>
+            <p class="text-zinc-300">
+              <span class="font-bold">Relayer fees</span> — basis points on each
+              gasless withdrawal fund relayer + protocol.
+            </p>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="text-red-500 font-display font-black">02</span>
+            <p class="text-zinc-300">
+              <span class="font-bold">ASP-as-a-Service</span> — compliance
+              providers run allowlists; Shroud licenses the gateway.
+            </p>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="text-red-500 font-display font-black">03</span>
+            <p class="text-zinc-300">
+              <span class="font-bold">Enterprise privacy SDK</span> — neobanks &
+              payroll apps embed the pool for confidential payouts.
+            </p>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="text-red-500 font-display font-black">04</span>
+            <p class="text-zinc-300">
+              <span class="font-bold">Cost moat</span> — sub-cent verification →
+              private withdrawals cheap enough for payroll volumes.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 Competitive -->
+      <div class="slide max-w-5xl w-full flex-col text-left">
+        <span class="text-xs mono tracking-widest text-red-500 uppercase mb-4"
+          >Slide 08 // Competitive Edge</span
+        >
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+          Why Shroud wins
+        </h2>
+        <div class="overflow-x-auto max-w-4xl">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="text-zinc-500 mono text-xs uppercase">
+                <th class="text-left p-3"></th>
+                <th class="p-3">Transparent rails</th>
+                <th class="p-3">Tornado mixer</th>
+                <th class="p-3 text-red-400">Shroud</th>
+              </tr>
+            </thead>
+            <tbody class="text-zinc-300">
+              <tr class="border-t border-zinc-800">
+                <td class="p-3 text-left text-zinc-400">Privacy</td>
+                <td class="p-3 text-center">❌</td>
+                <td class="p-3 text-center">✅</td>
+                <td class="p-3 text-center">✅</td>
+              </tr>
+              <tr class="border-t border-zinc-800">
+                <td class="p-3 text-left text-zinc-400">Sanctions-safe</td>
+                <td class="p-3 text-center">✅</td>
+                <td class="p-3 text-center">❌ blacklisted</td>
+                <td class="p-3 text-center text-red-400">✅ allowlist-gated</td>
+              </tr>
+              <tr class="border-t border-zinc-800">
+                <td class="p-3 text-left text-zinc-400">Institution-usable</td>
+                <td class="p-3 text-center">⚠️</td>
+                <td class="p-3 text-center">❌</td>
+                <td class="p-3 text-center">✅</td>
+              </tr>
+              <tr class="border-t border-zinc-800">
+                <td class="p-3 text-left text-zinc-400">
+                  Note-theft resistant
+                </td>
+                <td class="p-3 text-center">n/a</td>
+                <td class="p-3 text-center">⚠️</td>
+                <td class="p-3 text-center text-red-400">✅ EdDSA</td>
+              </tr>
+              <tr class="border-t border-zinc-800">
+                <td class="p-3 text-left text-zinc-400">
+                  On-chain compliance binding
+                </td>
+                <td class="p-3 text-center">n/a</td>
+                <td class="p-3 text-center">❌</td>
+                <td class="p-3 text-center text-red-400">✅ live ASP root</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 9 Traction -->
+      <div class="slide max-w-5xl w-full flex-col text-left">
+        <span class="text-xs mono tracking-widest text-red-500 uppercase mb-4"
+          >Slide 09 // Traction & Validation</span
+        >
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-8">
+          Built & verified, not vaporware
+        </h2>
+        <div class="grid md:grid-cols-2 gap-4 max-w-4xl">
+          <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-5">
+            <p class="text-emerald-400 font-display font-bold mb-1">
+              ✅ Verifies on testnet
+            </p>
+            <p class="text-zinc-400 text-sm">
+              Real Groth16 withdrawal proof accepted on-chain —
+              <span class="mono text-red-400">npm run prove:demo</span>.
+            </p>
+          </div>
+          <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-5">
+            <p class="text-emerald-400 font-display font-bold mb-1">
+              ✅ Compliance enforced
+            </p>
+            <p class="text-zinc-400 text-sm">
+              withdraw checks proof root vs live ASP registry; nullifiers block
+              double-spend; relayer fee is a real transfer.
+            </p>
+          </div>
+          <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-5">
+            <p class="text-emerald-400 font-display font-bold mb-1">
+              ✅ Owner binding hardened
+            </p>
+            <p class="text-zinc-400 text-sm">
+              In-circuit EdDSA over the nullifier (public inputs 4 → 6).
+            </p>
+          </div>
+          <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-5">
+            <p class="text-emerald-400 font-display font-bold mb-1">
+              ✅ Engineering rigor
+            </p>
+            <p class="text-zinc-400 text-sm">
+              Cargo tests green (2 withdraw paths), 100 unit tests, 6-stage CI.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10 Roadmap -->
+      <div class="slide max-w-5xl w-full flex-col text-left">
+        <span class="text-xs mono tracking-widest text-red-500 uppercase mb-4"
+          >Slide 10 // Roadmap</span
+        >
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-8">
+          30 / 60 / 90 days
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6 max-w-4xl">
+          <div class="border-t-2 border-red-500 pt-4">
+            <p class="mono text-red-400 text-sm mb-2">30 DAYS</p>
+            <p class="text-zinc-300 text-sm">
+              Redeploy BN254 + EdDSA contracts; stellar.expert verified; live
+              compliant-withdrawal demo.
+            </p>
+          </div>
+          <div class="border-t-2 border-zinc-700 pt-4">
+            <p class="mono text-zinc-400 text-sm mb-2">60 DAYS</p>
+            <p class="text-zinc-300 text-sm">
+              Decentralize ASP to multi-sig committee; in-browser proving;
+              root-rotation grace windows.
+            </p>
+          </div>
+          <div class="border-t-2 border-zinc-700 pt-4">
+            <p class="mono text-zinc-400 text-sm mb-2">90 DAYS</p>
+            <p class="text-zinc-300 text-sm">
+              Variable denominations, multi-asset pools, first neobank/payroll
+              design partner.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11 Team -->
+      <div class="slide max-w-5xl w-full flex-col text-left">
+        <span class="text-xs mono tracking-widest text-red-500 uppercase mb-4"
+          >Slide 11 // Team</span
+        >
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+          Engineering leverage
+        </h2>
+        <div
+          class="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 max-w-3xl"
+        >
+          <p class="text-2xl font-display font-bold mb-2">Edy Cu</p>
+          <p class="text-red-400 mono text-sm mb-4">
+            full-stack + applied-ZK engineer
+          </p>
+          <p class="text-zinc-300">
+            Solo-built the Circom withdrawal circuit (Merkle membership +
+            nullifier + EdDSA), the Rust/Soroban pool & ASP registry, the
+            gasless relayer flow, and the Next.js app + SDK. One of
+            <span class="text-red-400">five</span> real on-chain ZK products
+            shipped for this hackathon.
+          </p>
+        </div>
+      </div>
+
+      <!-- 12 Ask -->
+      <div class="slide max-w-4xl w-full flex-col items-center text-center">
+        <span class="text-xs mono tracking-widest text-red-500 uppercase mb-6"
+          >Slide 12 // The Ask</span
+        >
+        <h2 class="text-5xl md:text-6xl font-black tracking-tighter mb-6">
+          Privacy regulators<br /><span class="text-red-500"
+            >can live with.</span
+          >
+        </h2>
+        <p class="text-zinc-300 text-lg max-w-2xl mb-8">
+          Shroud makes privacy conditional on compliance — the only design
+          institutions can legally adopt, built on the SDF's own recommended ASP
+          pattern.
+        </p>
+        <div
+          class="mb-8 bg-black border border-zinc-800 rounded-xl px-6 py-4 mono text-sm text-red-400"
+        >
+          npm run prove:demo &nbsp;<span class="text-zinc-500"
+            ># a sanctioned address literally can't withdraw</span
+          >
+        </div>
+
+      <div class="flex flex-wrap justify-center gap-4 text-xs font-display font-bold">
+        <a href="https://github.com/edycutjong/shroud" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-zinc-900 border border-zinc-800 hover:border-red-500 rounded-xl text-zinc-300 hover:text-white transition-all">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="https://shroud.edycu.dev" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-zinc-900 border border-zinc-800 hover:border-red-500 rounded-xl text-zinc-300 hover:text-white transition-all">
+          🚀 Live Demo
+        </a>
+        <a href="https://youtu.be/placeholder" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-zinc-900 border border-zinc-800 hover:border-red-500 rounded-xl text-zinc-300 hover:text-white transition-all">
+          🎬 Demo Video
+        </a>
+      </div>
+      </div>
+    </div>
+
+    <footer
+      class="h-16 border-t border-zinc-900 bg-[#09090b]/80 backdrop-blur-lg flex items-center justify-between px-6 md:px-8 z-10 shrink-0"
+    >
+      <div class="text-[10px] mono text-zinc-600 uppercase">
+        Shroud · Stellar Testnet · Compliant Privacy Pool
+      </div>
+      <div class="flex items-center gap-4">
+        <button
+          onclick="prevSlide()"
+          class="px-4 py-1.5 border border-zinc-800 hover:border-red-500 rounded-lg text-xs mono text-zinc-400 hover:text-red-400 transition-all select-none"
+        >
+          PREV
+        </button>
+        <span id="slide-num" class="text-xs mono text-red-400">1 / 12</span>
+        <button
+          onclick="nextSlide()"
+          class="px-4 py-1.5 border border-zinc-800 hover:border-red-500 rounded-lg text-xs mono text-zinc-400 hover:text-red-400 transition-all select-none"
+        >
+          NEXT
+        </button>
+      </div>
+    </footer>
+
+    <script>
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".slide");
+      const slideNum = document.getElementById("slide-num");
+      function updateSlides() {
+        slides.forEach((s, i) =>
+          s.classList.toggle("active", i === currentSlide),
+        );
+        slideNum.textContent = `${currentSlide + 1} / ${slides.length}`;
+      }
+      function prevSlide() {
+        if (currentSlide > 0) {
+          currentSlide--;
+          updateSlides();
+        }
+      }
+      function nextSlide() {
+        if (currentSlide < slides.length - 1) {
+          currentSlide++;
+          updateSlides();
+        }
+      }
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft" || e.key === "PageUp") prevSlide();
+        if (e.key === "ArrowRight" || e.key === "PageDown" || e.key === " ")
+          nextSlide();
+      });
+    </script>
+  </body>
+</html>
