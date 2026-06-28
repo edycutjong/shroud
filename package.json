@@ -9,7 +9,7 @@
   "bugs": {
     "url": "https://github.com/edycutjong/shroud/issues"
   },
-  "homepage": "https://github.com/edycutjong/shroud#readme",
+  "homepage": "https://shroud.edycu.dev",
   "engines": {
     "node": ">=22.0.0"
   },
