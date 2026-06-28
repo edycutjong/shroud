@@ -463,6 +463,22 @@ export default function Home() {
             >
               FAQ
             </a>
+            <a
+              href="https://github.com/edycutjong/shroud"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-400 hover:text-white text-sm font-medium"
+            >
+              GitHub
+            </a>
+            <a
+              href="/pitch.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-400 hover:text-white text-sm font-medium"
+            >
+              Pitch Deck
+            </a>
             <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
               <span className="font-mono text-xs text-zinc-400">
@@ -497,12 +513,28 @@ export default function Home() {
           records using native ZK-proofs while demonstrating allowlist
           compliance with designated Association Set Providers.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
           <a
             href="#console"
             className="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-8 py-4 rounded-xl transition-all shadow-lg hover:shadow-indigo-500/20"
           >
             Launch Pool Console
+          </a>
+          <a
+            href="/pitch.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-indigo-500/30 hover:border-indigo-500/50 bg-indigo-500/10 text-indigo-300 font-semibold px-8 py-4 rounded-xl transition-all"
+          >
+            Pitch Deck
+          </a>
+          <a
+            href="https://github.com/edycutjong/shroud"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-emerald-500/30 hover:border-emerald-500/50 bg-emerald-500/10 text-emerald-300 font-semibold px-8 py-4 rounded-xl transition-all"
+          >
+            GitHub
           </a>
           <a
             href="#features"

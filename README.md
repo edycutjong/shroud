@@ -238,6 +238,7 @@ dorahacks-stellarzh-shroud/
 
 ## 📽️ Demo Materials
 
+- **GitHub Repository**: [https://github.com/edycutjong/shroud](https://github.com/edycutjong/shroud)
 - **Live App URL**: [https://shroud.edycu.dev](https://shroud.edycu.dev)
 - **Pitch Deck**: [https://shroud.edycu.dev/pitch.html](https://shroud.edycu.dev/pitch.html)
 - **Developer Experience Log**: [`docs/DX-REPORT.md`](docs/DX-REPORT.md)
