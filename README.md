@@ -43,6 +43,14 @@
   <img src="public/og-image.png" alt="Shroud Screenshot" width="100%">
 </div>
 
+<div align="center">
+  <img src="docs/screenshots/03-shielded-deposit.png" alt="Shroud — shielded USDC deposit & commitment" width="32%">
+  <img src="docs/screenshots/04-withdraw-tab-load.png" alt="Shroud — compliant shielded withdrawal" width="32%">
+  <img src="docs/screenshots/05-verify-and-payout.png" alt="Shroud — withdrawal verified & paid out" width="32%">
+  <br/>
+  <sub><em>Shielded deposit &amp; compliant withdrawal (demo sandbox). Reproduce the real proof with <code>npm run prove:demo</code>.</em></sub>
+</div>
+
 > **Compliant Privacy Withdrawal Flow:** Verify address KYC status on allowlist $\rightarrow$ Fetch Merkle inclusion path $\rightarrow$ Generate Groth16 Proof client-side in browser $\rightarrow$ Submit gasless relayer payload $\rightarrow$ Verify proof natively on-chain $\rightarrow$ Payout USDC to fresh wallet.
 
 ---

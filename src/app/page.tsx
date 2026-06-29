@@ -549,26 +549,26 @@ export default function Home() {
       <section className="relative z-10 max-w-5xl mx-auto w-full px-6 py-8 grid grid-cols-3 gap-6 text-center border border-zinc-800/80 bg-zinc-900/20 rounded-2xl backdrop-blur-md mb-20">
         <div>
           <div className="font-display text-2xl md:text-4xl font-extrabold text-indigo-400">
-            $12,450,000+
+            BN254
           </div>
           <div className="text-zinc-500 text-xs md:text-sm font-medium mt-1 uppercase tracking-wider">
-            Total Value Locked
+            On-Chain Groth16 Verify
           </div>
         </div>
         <div className="border-x border-zinc-800/80">
           <div className="font-display text-2xl md:text-4xl font-extrabold text-emerald-400">
-            100%
+            K-of-N
           </div>
           <div className="text-zinc-500 text-xs md:text-sm font-medium mt-1 uppercase tracking-wider">
-            Audit Success Rate
+            ASP Federation
           </div>
         </div>
         <div>
           <div className="font-display text-2xl md:text-4xl font-extrabold text-white">
-            14,250+
+            Testnet
           </div>
           <div className="text-zinc-500 text-xs md:text-sm font-medium mt-1 uppercase tracking-wider">
-            ZK Proofs Verified
+            Live On-Chain
           </div>
         </div>
       </section>
