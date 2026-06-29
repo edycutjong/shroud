@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0](../../compare/v1.1.1...v1.2.0) (2026-06-29)
+
+### 🚀 Features
+
+- **dashboard:** refine homepage stats and add README screenshots (c8055a4)
+- **shroud:** update verifier and pool contract ids to real testnet deployments (1905807)
+
+### 💄 Style
+
+- **shroud:** run prettier to format codebase (2611d6b)
+
+### 🔧 Chores
+
+- **shroud:** update Cargo.lock, test snapshots, and screenshots (cb9c030)
+
+### 📝 Documentation
+
+- **readme:** update demo video YouTube URL and configuration (18b15d6)
+- **readme:** update readme content and references (3ad9f17)
+
 ## [1.1.1](../../compare/v1.1.0...v1.1.1) (2026-06-28)
 
 ### 🐛 Bug Fixes
