@@ -1,5 +1,5 @@
 // End-to-end REAL proving demo (mirrors the browser path):
-//   fresh random inputs -> snarkjs groth16.fullProve (bls12-381)
+//   fresh random inputs -> snarkjs groth16.fullProve (BN254 / bn128)
 //   -> convert to soroban byte layout -> invoke the on-chain verifier.
 // Proves the JS proving pipeline produces proofs the deployed contract accepts.
 import { execFileSync } from "node:child_process";
@@ -107,7 +107,7 @@ async function run() {
 
   // 4) REAL groth16 proof (browser uses the same call)
   console.log(
-    "Generating real bls12-381 Groth16 proof (snarkjs.groth16.fullProve)...",
+    "Generating real BN254 Groth16 proof (snarkjs.groth16.fullProve)...",
   );
   const { proof, publicSignals } = await snarkjs.groth16.fullProve(
     input,

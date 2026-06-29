@@ -3,7 +3,7 @@ import { rpc } from "@stellar/stellar-sdk";
 
 // Live status endpoint. Reads the real Soroban testnet RPC and reports the
 // deployed Shroud contract IDs — no hardcoded roots or mock counts. The real
-// Groth16 (BLS12-381) proof verification is reproduced by `npm run prove:demo`,
+// Groth16 (BN254) proof verification is reproduced by `npm run prove:demo`,
 // which submits a snarkjs-generated proof to verify_proof on the verifier.
 
 export const dynamic = "force-dynamic";
@@ -14,9 +14,15 @@ const RPC_URL =
 
 export async function GET() {
   const contracts = {
-    shroud_pool: process.env.NEXT_PUBLIC_SHROUD_POOL_ID || null,
-    asp_registry: process.env.NEXT_PUBLIC_ASP_REGISTRY_ID || null,
-    groth16_verifier: process.env.NEXT_PUBLIC_GROTH16_VERIFIER_ID || null,
+    shroud_pool:
+      process.env.NEXT_PUBLIC_SHROUD_POOL_ID ||
+      "CCHIHDGB7H6VDTNI2M7TYY72DENTQUO7GEXX4HBAQRV26PRNTZLGLX7R",
+    asp_registry:
+      process.env.NEXT_PUBLIC_ASP_REGISTRY_ID ||
+      "CAV5M6BAISOWF4INUCF6KW4NO3V5VU6R5BTVHLQBIVV66PBNGDBWXXRM",
+    groth16_verifier:
+      process.env.NEXT_PUBLIC_GROTH16_VERIFIER_ID ||
+      "CAM37IGZ44SKFE6SBWMCIKAGRHU7NCMIBONDZM3QHKIZ5DV4PWAH57GH",
   };
   try {
     const server = new rpc.Server(RPC_URL, {
@@ -34,7 +40,7 @@ export async function GET() {
       latest_ledger: latestLedger.sequence,
       protocol_version: latestLedger.protocolVersion,
       verify_entrypoint: "verify_proof",
-      note: "Real Groth16/BLS12-381 verification is reproduced via `npm run prove:demo`.",
+      note: "Real BN254 Groth16 verification is reproduced via `npm run prove:demo`.",
     });
   } catch (err) {
     return NextResponse.json(

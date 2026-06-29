@@ -5,7 +5,7 @@
   <img src="docs/readme-hero.png" alt="Shroud" width="100%">
 
   <p><strong>✅ Real Groth16 (BN254) proof verified on Stellar testnet.</strong><br/>
-  Reproduce with <code>npm run prove:demo</code> — groth16_verifier <code>CCHBJVLXAXPXSJCMRCNVWDZ3WTHCF2DRLFB5DQYGTL6PKROBPOKGBK5M</code>; a fresh snarkjs withdrawal proof makes <code>verify_proof</code> return true on-chain, and tampered inputs are rejected.<br/>
+  Reproduce with <code>npm run prove:demo</code> — groth16_verifier <code>CAM37IGZ44SKFE6SBWMCIKAGRHU7NCMIBONDZM3QHKIZ5DV4PWAH57GH</code>; a fresh snarkjs withdrawal proof makes <code>verify_proof</code> return true on-chain, and tampered inputs are rejected.<br/>
   <em>Honest status: the hosted web app is a demo sandbox (local crypto simulations for UX); the load-bearing ZK is the prove:demo pipeline plus the deployed contract.</em></p>
 
   <br/>
@@ -44,6 +44,25 @@
 </div>
 
 > **Compliant Privacy Withdrawal Flow:** Verify address KYC status on allowlist $\rightarrow$ Fetch Merkle inclusion path $\rightarrow$ Generate Groth16 Proof client-side in browser $\rightarrow$ Submit gasless relayer payload $\rightarrow$ Verify proof natively on-chain $\rightarrow$ Payout USDC to fresh wallet.
+
+---
+
+## ✅ Proof of On-Chain Verification (reproduce it)
+
+`npm run prove:demo` generates a **fresh** BN254 Groth16 withdrawal proof and verifies it live on Stellar testnet. Example run:
+
+```text
+Generating real BN254 Groth16 proof (snarkjs.groth16.fullProve)...
+off-chain verify: true
+Invoking on-chain verify_proof on CAM37IGZ44SKFE6SBWMCIKAGRHU7NCMIBONDZM3QHKIZ5DV4PWAH57GH ...
+on-chain verify_proof => true
+
+✅ JS-generated proof accepted on-chain.
+```
+
+Valid proof ⇒ `true`; the tampered/negative control is covered by the verifier's `cargo test` suite.
+
+- **Groth16 verifier (testnet):** [`CAM37IGZ…PWAH57GH`](https://stellar.expert/explorer/testnet/contract/CAM37IGZ44SKFE6SBWMCIKAGRHU7NCMIBONDZM3QHKIZ5DV4PWAH57GH)
 
 ---
 
@@ -124,7 +143,7 @@ Smart contracts target the **`wasm32v1-none`** compilation target (using `cargo 
 
 ### Deployed Contract Details
 
-- **Groth16 Verifier Contract:** `CCHBJVLXAXPXSJCMRCNVWDZ3WTHCF2DRLFB5DQYGTL6PKROBPOKGBK5M`
+- **Groth16 Verifier Contract:** `CAM37IGZ44SKFE6SBWMCIKAGRHU7NCMIBONDZM3QHKIZ5DV4PWAH57GH`
 - **Shroud Pool & Registry Contracts:** Deployed locally/testnet dynamically during setup.
 
 ### Contract Endpoints & Parameters
