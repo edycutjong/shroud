@@ -7,11 +7,7 @@
       "0825bfe90414979c152c5d71f6bb3189fb2f0dd61818aa6532e953bd5748201a",
       "f3494ea8f099cf06c7e26d3564414a5ae1548063ba0f489f44e1e8ce2502cb98"
     ],
-    "indices": [
-      1,
-      1,
-      1
-    ]
+    "indices": [1, 1, 1]
   },
   "GD222222222222222222222222222222222222222222222222222222": {
     "index": 1,
@@ -21,11 +17,7 @@
       "0825bfe90414979c152c5d71f6bb3189fb2f0dd61818aa6532e953bd5748201a",
       "f3494ea8f099cf06c7e26d3564414a5ae1548063ba0f489f44e1e8ce2502cb98"
     ],
-    "indices": [
-      0,
-      1,
-      1
-    ]
+    "indices": [0, 1, 1]
   },
   "GD333333333333333333333333333333333333333333333333333333": {
     "index": 2,
@@ -35,11 +27,7 @@
       "8cbf1f745d77cb18ef5a13bf47a9391a7de98e1798de14bda5e4c0e62e91cb90",
       "f3494ea8f099cf06c7e26d3564414a5ae1548063ba0f489f44e1e8ce2502cb98"
     ],
-    "indices": [
-      1,
-      0,
-      1
-    ]
+    "indices": [1, 0, 1]
   },
   "GD444444444444444444444444444444444444444444444444444444": {
     "index": 3,
@@ -49,11 +37,7 @@
       "8cbf1f745d77cb18ef5a13bf47a9391a7de98e1798de14bda5e4c0e62e91cb90",
       "f3494ea8f099cf06c7e26d3564414a5ae1548063ba0f489f44e1e8ce2502cb98"
     ],
-    "indices": [
-      0,
-      0,
-      1
-    ]
+    "indices": [0, 0, 1]
   },
   "GBSHROUDXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX": {
     "index": 4,
@@ -63,10 +47,6 @@
       "5f108237b5ea5862dd1983fb3dce6e9b32d70fb0d23754ebf59e3ef4cf5f68ff",
       "f4219057fcb8d33f59222dae6fb2a5375df0227ea18c788e80be14f1b0ca9468"
     ],
-    "indices": [
-      1,
-      1,
-      0
-    ]
+    "indices": [1, 1, 0]
   }
 }

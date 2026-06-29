@@ -208,9 +208,18 @@ export default function Home() {
   // Download secret note key
   const downloadNoteKey = () => {
     if (!generatedNote) return;
-    const blob = new Blob([JSON.stringify(generatedNote, (k, v) => typeof v === 'bigint' ? v.toString() : v, 2)], {
-      type: "application/json",
-    });
+    const blob = new Blob(
+      [
+        JSON.stringify(
+          generatedNote,
+          (k, v) => (typeof v === "bigint" ? v.toString() : v),
+          2,
+        ),
+      ],
+      {
+        type: "application/json",
+      },
+    );
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
@@ -818,7 +827,12 @@ export default function Home() {
                     <button
                       onClick={() =>
                         setNoteFileContent(
-                          JSON.stringify(generatedNote, (k, v) => typeof v === 'bigint' ? v.toString() : v, 2),
+                          JSON.stringify(
+                            generatedNote,
+                            (k, v) =>
+                              typeof v === "bigint" ? v.toString() : v,
+                            2,
+                          ),
                         )
                       }
                       className="text-xs text-indigo-400 hover:text-indigo-300 font-mono focus:outline-none cursor-pointer"
