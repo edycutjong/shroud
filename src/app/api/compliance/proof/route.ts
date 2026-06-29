@@ -130,7 +130,7 @@ export async function GET(request: Request) {
   }
 
   // If a valid address format but not in allowlist, dynamically enroll it!
-  const isStellarAddress = /^G[A-D2-7][A-Z2-7]{54}$/.test(address);
+  const isStellarAddress = /^G[A-D2-7][A-Z2-7]{52,54}$/.test(address);
   if (!allowed.includes(address) && isStellarAddress) {
     allowed.push(address);
     fs.writeFileSync(allowedPath, JSON.stringify(allowed, null, 2));

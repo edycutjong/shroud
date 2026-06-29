@@ -12,7 +12,7 @@
 
 [![Live Demo](https://img.shields.io/badge/🚀_Live-Demo-06b6d4?style=for-the-badge)](https://shroud.edycu.dev)
 [![Pitch Deck](https://img.shields.io/badge/📊_Pitch-Deck-f59e0b?style=for-the-badge)](https://shroud.edycu.dev/pitch.html)
-[![Demo Video](https://img.shields.io/badge/🎬_Demo-Video-ef4444?style=for-the-badge)](https://youtu.be/placeholder)
+[![Demo Video](https://img.shields.io/badge/🎬_Demo-Video-ef4444?style=for-the-badge)](https://youtu.be/WhIzP_K0UBU)
 [![Built for Stellar Hacks](https://img.shields.io/badge/DoraHacks-Stellar_Hacks:_Real--World_ZK-8b5cf6?style=for-the-badge)](https://dorahacks.io/hackathon/stellar-hacks-zk)
 
   <br/>
