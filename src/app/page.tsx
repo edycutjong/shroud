@@ -17,6 +17,12 @@ interface MerkleProof {
   indices: number[];
 }
 
+// Predefined demo identity used by the "Demo" button — lets anyone explore the
+// sandbox console without the Freighter extension. Clearly labeled as a
+// simulation and kept in sandbox mode so nothing is broadcast.
+const DEMO_WALLET_ADDRESS =
+  "GBSHROUDXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+
 export default function Home() {
   const [activeTab, setActiveTab] = useState<"deposit" | "withdraw" | "admin">(
     "deposit",
@@ -55,50 +61,66 @@ export default function Home() {
       `[Freighter] Connecting to Freighter Wallet...`,
     ]);
     try {
-      const win = window as unknown as Record<string, Record<string, unknown>>;
-      const freighterDetected =
-        typeof window !== "undefined" && (win.stellarWebKit || win.stellar);
-      if (!freighterDetected) {
+      const { isConnected, requestAccess } =
+        await import("@stellar/freighter-api");
+
+      const connection = await isConnected();
+      if (!connection.isConnected) {
         setProvingLogs((prev) => [
           ...prev,
-          "[Freighter] Wallet extension not detected. Initializing Demo Mode...",
+          "[Freighter] Extension not detected. Install Freighter, or use the Demo button to explore the sandbox.",
         ]);
-        setTimeout(() => {
-          setWalletConnected(true);
-          setWalletAddress(
-            "GBSHROUDXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-          );
-          setKycAddress(
-            "GBSHROUDXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-          );
-          setProvingLogs((prev) => [
-            ...prev,
-            `[Freighter] Connected (Demo Mode). Address: GBSHROUD...`,
-          ]);
-        }, 1200);
         return;
       }
 
-      const pubKey = await (
-        window as unknown as {
-          stellar: { getPublicKey: () => Promise<string> };
-        }
-      ).stellar.getPublicKey();
-      if (pubKey) {
-        setWalletConnected(true);
-        setWalletAddress(pubKey);
-        setKycAddress(pubKey);
-        setSandboxMode(false);
+      const access = await requestAccess();
+      if (access.error) {
         setProvingLogs((prev) => [
           ...prev,
-          `[Freighter] Connected. Address: ${pubKey}`,
+          `[Freighter] Access denied or cancelled: ${JSON.stringify(access.error)}`,
         ]);
+        return;
       }
+      if (!access.address) {
+        setProvingLogs((prev) => [
+          ...prev,
+          "[Freighter] No account returned by the wallet.",
+        ]);
+        return;
+      }
+
+      setWalletConnected(true);
+      setWalletAddress(access.address);
+      setKycAddress(access.address);
+      setSandboxMode(false);
+      setProvingLogs((prev) => [
+        ...prev,
+        `[Freighter] Connected. Address: ${access.address}`,
+      ]);
     } catch (err: unknown) {
       console.error("Wallet connection failed:", err);
       const msg = err instanceof Error ? err.message : String(err);
       setProvingLogs((prev) => [...prev, `[ERROR] ${msg}`]);
     }
+  };
+
+  // Predefined demo identity — no wallet extension required. Stays in sandbox
+  // mode so nothing is broadcast; purely for exploring the console UI.
+  const connectDemoWallet = () => {
+    setProvingLogs((prev) => [
+      ...prev,
+      "[Sandbox] Loading predefined demo identity (no wallet required)...",
+    ]);
+    setTimeout(() => {
+      setWalletConnected(true);
+      setWalletAddress(DEMO_WALLET_ADDRESS);
+      setKycAddress(DEMO_WALLET_ADDRESS);
+      setSandboxMode(true);
+      setProvingLogs((prev) => [
+        ...prev,
+        `[Sandbox] Demo identity active: ${DEMO_WALLET_ADDRESS.slice(0, 9)}... (simulation only)`,
+      ]);
+    }, 600);
   };
 
   // Admin dashboard states
@@ -324,79 +346,74 @@ export default function Home() {
           nativeToScVal(BigInt(0)),
         );
 
-        if (
-          typeof window !== "undefined" &&
-          "stellar" in window &&
-          window.stellar
-        ) {
-          log(
-            `[Freighter] Fetching account details for wallet: ${walletAddress}...`,
-          );
-          const account = await server.getAccount(walletAddress);
+        const { isConnected, signTransaction } =
+          await import("@stellar/freighter-api");
 
-          const tx = new TransactionBuilder(account, {
-            fee: "100000",
-            networkPassphrase: Networks.TESTNET,
-          })
-            .addOperation(callOp)
-            .setTimeout(30)
-            .build();
-
-          const xdrTx = tx.toXDR();
-
-          log(`[Freighter] Requesting wallet signature for withdrawal...`);
-          const signedTx = await (
-            window as unknown as {
-              stellar: {
-                signTransaction: (
-                  xdr: string,
-                  opts: { networkPassphrase: string },
-                ) => Promise<string>;
-              };
-            }
-          ).stellar.signTransaction(xdrTx, {
-            networkPassphrase: Networks.TESTNET,
-          });
-
-          log(`[Stellar] Submitting transaction to Soroban RPC...`);
-          const signedTxObj = TransactionBuilder.fromXDR(
-            signedTx,
-            Networks.TESTNET,
-          );
-          const sendResponse = await server.sendTransaction(signedTxObj);
-          if (sendResponse.status === "ERROR") {
-            throw new Error(
-              `RPC submit error: ${JSON.stringify(sendResponse.errorResult)}`,
-            );
-          }
-
-          let txStatus = await server.getTransaction(sendResponse.hash);
-          let attempts = 0;
-          while (txStatus.status === "NOT_FOUND" && attempts < 10) {
-            await new Promise((resolve) => setTimeout(resolve, 1000));
-            txStatus = await server.getTransaction(sendResponse.hash);
-            attempts++;
-          }
-
-          if (txStatus.status === "SUCCESS") {
-            log(
-              `[Stellar] Transaction finalized successfully! Hash: ${sendResponse.hash}`,
-            );
-            setWithdrawalTxHash(sendResponse.hash);
-            setTelemetry((prev) => ({
-              ...prev,
-              activeNullifiersCount: prev.activeNullifiersCount + 1,
-            }));
-            triggerConfetti();
-          } else {
-            throw new Error(
-              `Transaction failed with status: ${txStatus.status}`,
-            );
-          }
-        } else {
+        const connection = await isConnected();
+        if (!connection.isConnected) {
           throw new Error(
-            "Freighter wallet not detected. Install Freighter browser extension to withdraw on Testnet.",
+            "Freighter wallet not detected. Install the Freighter browser extension (or use Sandbox mode) to withdraw on Testnet.",
           );
+        }
+
+        log(
+          `[Freighter] Fetching account details for wallet: ${walletAddress}...`,
+        );
+        const account = await server.getAccount(walletAddress);
+
+        const tx = new TransactionBuilder(account, {
+          fee: "100000",
+          networkPassphrase: Networks.TESTNET,
+        })
+          .addOperation(callOp)
+          .setTimeout(30)
+          .build();
+
+        const xdrTx = tx.toXDR();
+
+        log(`[Freighter] Requesting wallet signature for withdrawal...`);
+        const signResult = await signTransaction(xdrTx, {
+          networkPassphrase: Networks.TESTNET,
+          address: walletAddress,
+        });
+        if (signResult.error) {
+          throw new Error(
+            `Freighter signing failed: ${JSON.stringify(signResult.error)}`,
+          );
+        }
+
+        log(`[Stellar] Submitting transaction to Soroban RPC...`);
+        const signedTxObj = TransactionBuilder.fromXDR(
+          signResult.signedTxXdr,
+          Networks.TESTNET,
+        );
+        const sendResponse = await server.sendTransaction(signedTxObj);
+        if (sendResponse.status === "ERROR") {
+          throw new Error(
+            `RPC submit error: ${JSON.stringify(sendResponse.errorResult)}`,
+          );
+        }
+
+        let txStatus = await server.getTransaction(sendResponse.hash);
+        let attempts = 0;
+        while (txStatus.status === "NOT_FOUND" && attempts < 10) {
+          await new Promise((resolve) => setTimeout(resolve, 1000));
+          txStatus = await server.getTransaction(sendResponse.hash);
+          attempts++;
+        }
+
+        if (txStatus.status === "SUCCESS") {
+          log(
+            `[Stellar] Transaction finalized successfully! Hash: ${sendResponse.hash}`,
+          );
+          setWithdrawalTxHash(sendResponse.hash);
+          setTelemetry((prev) => ({
+            ...prev,
+            activeNullifiersCount: prev.activeNullifiersCount + 1,
+          }));
+          triggerConfetti();
+        } else {
+          throw new Error(`Transaction failed with status: ${txStatus.status}`);
         }
       } else {
         log(
@@ -497,18 +514,32 @@ export default function Home() {
               </span>
             </div>
 
-            <button
-              onClick={connectWallet}
-              className={`font-mono text-xs font-bold tracking-widest px-4 py-2 rounded-lg border transition-all cursor-pointer ${
-                walletConnected
-                  ? "bg-indigo-500/10 border-indigo-500/30 text-indigo-400"
-                  : "bg-zinc-900 hover:bg-zinc-800 border border-zinc-850 hover:border-zinc-700 text-white"
-              }`}
-            >
-              {walletConnected
-                ? `WALLET: ${walletAddress.slice(0, 6)}...${walletAddress.slice(-4)}`
-                : "CONNECT FREIGHTER"}
-            </button>
+            {walletConnected ? (
+              <button
+                onClick={connectWallet}
+                title={sandboxMode ? "Demo identity (sandbox)" : walletAddress}
+                className="font-mono text-xs font-bold tracking-widest px-4 py-2 rounded-lg border bg-indigo-500/10 border-indigo-500/30 text-indigo-400 transition-all cursor-pointer"
+              >
+                {`${sandboxMode ? "DEMO" : "WALLET"}: ${walletAddress.slice(0, 6)}...${walletAddress.slice(-4)}`}
+              </button>
+            ) : (
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={connectWallet}
+                  className="font-mono text-xs font-bold tracking-widest px-4 py-2 rounded-lg border bg-zinc-900 hover:bg-zinc-800 border-zinc-850 hover:border-zinc-700 text-white transition-all cursor-pointer"
+                >
+                  <span className="md:hidden">CONNECT</span>
+                  <span className="hidden md:inline">CONNECT FREIGHTER</span>
+                </button>
+                <button
+                  onClick={connectDemoWallet}
+                  title="Load a predefined demo identity — no wallet extension required"
+                  className="font-mono text-xs font-bold tracking-widest px-3 py-2 rounded-lg border border-amber-500/30 bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 transition-all cursor-pointer"
+                >
+                  DEMO
+                </button>
+              </div>
+            )}
           </nav>
         </div>
       </header>
