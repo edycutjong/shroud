@@ -1250,18 +1250,27 @@ export default function Home() {
                 Resources
               </span>
               <a
-                href="#"
+                href="https://github.com/edycutjong/shroud#readme"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-zinc-500 hover:text-zinc-300 block mb-2"
               >
                 API Documentation
               </a>
               <a
-                href="#"
+                href="https://github.com/edycutjong/shroud/blob/main/docs/AUDIT_REPORT.md"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-zinc-500 hover:text-zinc-300 block mb-2"
               >
                 Audit Report
               </a>
-              <a href="#" className="text-zinc-500 hover:text-zinc-300 block">
+              <a
+                href="https://github.com/edycutjong/shroud/blob/main/docs/DX-REPORT.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-500 hover:text-zinc-300 block"
+              >
                 Friction Log
               </a>
             </div>
