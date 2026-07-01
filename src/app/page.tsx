@@ -455,40 +455,40 @@ export default function Home() {
 
           <nav className="flex items-center gap-3 md:gap-6">
             <div className="hidden md:flex items-center gap-6">
-            <a
-              href="#console"
-              className="text-zinc-400 hover:text-white text-sm font-medium"
-            >
-              Console
-            </a>
-            <a
-              href="#features"
-              className="text-zinc-400 hover:text-white text-sm font-medium"
-            >
-              Features
-            </a>
-            <a
-              href="#faq"
-              className="text-zinc-400 hover:text-white text-sm font-medium"
-            >
-              FAQ
-            </a>
-            <a
-              href="https://github.com/edycutjong/shroud"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-zinc-400 hover:text-white text-sm font-medium"
-            >
-              GitHub
-            </a>
-            <a
-              href="/pitch.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-zinc-400 hover:text-white text-sm font-medium"
-            >
-              Pitch Deck
-            </a>
+              <a
+                href="#console"
+                className="text-zinc-400 hover:text-white text-sm font-medium"
+              >
+                Console
+              </a>
+              <a
+                href="#features"
+                className="text-zinc-400 hover:text-white text-sm font-medium"
+              >
+                Features
+              </a>
+              <a
+                href="#faq"
+                className="text-zinc-400 hover:text-white text-sm font-medium"
+              >
+                FAQ
+              </a>
+              <a
+                href="https://github.com/edycutjong/shroud"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-400 hover:text-white text-sm font-medium"
+              >
+                GitHub
+              </a>
+              <a
+                href="/pitch.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-400 hover:text-white text-sm font-medium"
+              >
+                Pitch Deck
+              </a>
             </div>
             <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
