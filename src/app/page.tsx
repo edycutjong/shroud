@@ -9,6 +9,7 @@ import {
   addrToField,
 } from "../sdk";
 import { triggerConfetti } from "../sdk/confetti";
+import Link from "next/link";
 
 interface MerkleProof {
   root: string;
@@ -121,6 +122,14 @@ export default function Home() {
         `[Sandbox] Demo identity active: ${DEMO_WALLET_ADDRESS.slice(0, 9)}... (simulation only)`,
       ]);
     }, 600);
+  };
+
+  const disconnectWallet = () => {
+    setWalletConnected(false);
+    setWalletAddress("");
+    setKycAddress("");
+    setSandboxMode(true);
+    setProvingLogs((prev) => [...prev, "[Wallet] Disconnected."]);
   };
 
   // Admin dashboard states
@@ -515,13 +524,23 @@ export default function Home() {
             </div>
 
             {walletConnected ? (
-              <button
-                onClick={connectWallet}
-                title={sandboxMode ? "Demo identity (sandbox)" : walletAddress}
-                className="font-mono text-xs font-bold tracking-widest px-4 py-2 rounded-lg border bg-indigo-500/10 border-indigo-500/30 text-indigo-400 transition-all cursor-pointer"
-              >
-                {`${sandboxMode ? "DEMO" : "WALLET"}: ${walletAddress.slice(0, 6)}...${walletAddress.slice(-4)}`}
-              </button>
+              <div className="flex items-center gap-2">
+                <span
+                  title={
+                    sandboxMode ? "Demo identity (sandbox)" : walletAddress
+                  }
+                  className="font-mono text-xs font-bold tracking-widest px-4 py-2 rounded-lg border bg-indigo-500/10 border-indigo-500/30 text-indigo-400"
+                >
+                  {`${sandboxMode ? "DEMO" : "WALLET"}: ${walletAddress.slice(0, 6)}...${walletAddress.slice(-4)}`}
+                </span>
+                <button
+                  onClick={disconnectWallet}
+                  title="Disconnect wallet"
+                  className="font-mono text-xs font-bold tracking-widest px-3 py-2 rounded-lg border border-zinc-700 bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white transition-all cursor-pointer"
+                >
+                  DISCONNECT
+                </button>
+              </div>
             ) : (
               <div className="flex items-center gap-2">
                 <button
@@ -1251,18 +1270,18 @@ export default function Home() {
             <span className="text-zinc-400 block mb-3 font-semibold uppercase">
               Legal
             </span>
-            <a
-              href="#"
+            <Link
+              href="/privacy"
               className="text-zinc-500 hover:text-zinc-300 block mb-2"
             >
               Privacy Policy
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/terms"
               className="text-zinc-500 hover:text-zinc-300 block mb-2"
             >
               Terms of Use
-            </a>
+            </Link>
             <span className="block mt-4">
               &copy; {new Date().getFullYear()} SHROUD PROTOCOL.
             </span>
