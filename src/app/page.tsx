@@ -490,7 +490,7 @@ export default function Home() {
                 Pitch Deck
               </a>
             </div>
-            <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800">
+            <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
               <span className="font-mono text-xs text-zinc-400">
                 STELLAR TESTNET
