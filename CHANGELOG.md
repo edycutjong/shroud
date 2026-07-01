@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.1](../../compare/v1.2.0...v1.2.1) (2026-07-01)
+
+### 🐛 Bug Fixes
+
+- **e2e:** stop mobile viewport failing the header branding smoke test (0d5a4ad)
+
+### 💄 Style
+
+- fix prettier formatting (dee995c)
+- format pitch.html with prettier (f17b0f9)
+
+### ✅ Tests
+
+- **core:** verify and complete unit test suites and coverage (b176c73)
+
+### 📝 Documentation
+
+- **pitch:** replace page 1 emojis with SVG icons (1e74ec1)
+- **pitch:** replace emoji with logo icon and update demo video link (2a29e78)
+
 ## [1.2.0](../../compare/v1.1.1...v1.2.0) (2026-06-29)
 
 ### 🚀 Features
