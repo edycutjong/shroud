@@ -8,7 +8,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const fixturePath = resolve(__dirname, "../circuits/build/fixture.json");
 const VERIFIER =
   process.env.VERIFIER_ID ||
-  "CCHBJVLXAXPXSJCMRCNVWDZ3WTHCF2DRLFB5DQYGTL6PKROBPOKGBK5M";
+  "CAM37IGZ44SKFE6SBWMCIKAGRHU7NCMIBONDZM3QHKIZ5DV4PWAH57GH";
 
 if (!fs.existsSync(fixturePath)) {
   console.error("fixture.json not found! Run npm run build first.");

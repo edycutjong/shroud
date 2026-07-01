@@ -161,3 +161,33 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* ─── UI Polish: accessibility + refinement ─── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:focus-visible {
+  outline: 2px solid #818cf8;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+::selection { background: #818cf8; color: #0b0b0f; }
+html { scroll-behavior: smooth; }
+* {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, #6366f1 45%, transparent) transparent;
+}
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, #6366f1 40%, transparent);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover { background: #6366f1; }
+h1, h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }

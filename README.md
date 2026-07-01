@@ -29,6 +29,22 @@
 
 ---
 
+## 🧩 Part of the Stellar ZK Suite
+
+Five ZK-gated apps, one thesis: **real on-chain zero-knowledge on Stellar Soroban** (Protocol 25/26, native BN254 host functions). Each verifies a _fresh_ proof against a deployed testnet contract, reproducible with `npm run prove:demo` (valid proof ⇒ `true`, tampered ⇒ `false`). Built solo for **Stellar Hacks: Real-World ZK**.
+
+| App | Proves privately | ZK stack | Links |
+|---|---|---|---|
+| 👤 **[Shroud](https://github.com/edycutjong/shroud)** ⭐ **flagship** | Compliant privacy pool — withdraw only if in the ASP compliance set | Circom · Groth16 (BN254) | [site](https://shroud.edycu.dev) · [video](https://youtu.be/WhIzP_K0UBU) |
+| 🔬 **[Crisp](https://github.com/edycutjong/crisp)** | Proof-of-reserves — reserves ≥ liabilities, balances hidden | Circom · Groth16 (BN254) | [site](https://crisp.edycu.dev) · [video](https://youtu.be/fhVVoZKz7sI) |
+| 🤫 **[Sotto](https://github.com/edycutjong/sotto)** | Sealed-bid auctions — winner is the lowest valid bid, losers hidden | Circom · Groth16 (BN254) | [site](https://sotto.edycu.dev) · [video](https://youtu.be/PAbWjCXx5XU) |
+| 🔮 **[Obscura](https://github.com/edycutjong/obscura)** | B2B invoice settlement — within credit terms, no double-factoring | Noir · UltraHonk | [site](https://obscura.edycu.dev) · [video](https://youtu.be/PZ9tChsAwas) |
+| 🦓 **[Zebra](https://github.com/edycutjong/zebra)** | Confidential payroll — KYC'd recipients + correct totals, salaries hidden | Noir · UltraHonk | [site](https://zebra.edycu.dev) · [video](https://youtu.be/KatlfYRjvw8) |
+
+🚩 **Flagship: [Shroud](https://github.com/edycutjong/shroud)** — the compliant privacy pool (ASP gateway, per the SDF's recommended design). All five share the same circuits-to-Soroban verification harness.
+
+---
+
 ## 💡 The Problem & Solution
 
 **The Problem:** Privacy is essential for neobanks and corporate payroll payouts to prevent front-running by competitors. However, existing privacy mixers (like Tornado Cash) are uncompliant: they allow sanctioned actors to pool funds, leading to global regulatory blacklists and making privacy features unusable for regulated financial institutions.
