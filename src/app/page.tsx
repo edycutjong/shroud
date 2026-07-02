@@ -1295,7 +1295,8 @@ export default function Home() {
               Terms of Use
             </Link>
             <span className="block mt-4">
-              &copy; {new Date().getFullYear()} SHROUD PROTOCOL.
+              &copy; {new Date().getFullYear()} SHROUD PROTOCOL. · v
+              {process.env.NEXT_PUBLIC_APP_VERSION}
             </span>
           </div>
         </div>
