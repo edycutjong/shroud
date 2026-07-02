@@ -10,6 +10,7 @@ import {
 } from "../sdk";
 import { triggerConfetti } from "../sdk/confetti";
 import Link from "next/link";
+import Image from "next/image";
 
 interface MerkleProof {
   root: string;
@@ -469,8 +470,10 @@ export default function Home() {
       <header className="border-b border-zinc-800 bg-zinc-950/60 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <img
+            <Image
               src="/icon.svg"
+              width={40}
+              height={40}
               className="w-10 h-10 filter drop-shadow-[0_0_8px_rgba(99,102,241,0.4)]"
               alt="Shroud Logo"
             />
