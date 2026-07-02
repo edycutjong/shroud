@@ -11,6 +11,7 @@ import {
 import { triggerConfetti } from "../sdk/confetti";
 import Link from "next/link";
 import Image from "next/image";
+import VerifyOnchainPanel from "../components/VerifyOnchainPanel";
 
 interface MerkleProof {
   root: string;
@@ -636,6 +637,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Real on-chain ZK verification (witnessable, no wallet) */}
+      <VerifyOnchainPanel />
 
       {/* Sandbox Toggle / Banner */}
       <div className="max-w-7xl w-full mx-auto px-6 mb-4 relative z-10">
