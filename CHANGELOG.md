@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.7.1](../../compare/v1.7.0...v1.7.1) (2026-08-22)
+
+### 🐛 Bug Fixes
+
+- **deps:** resolve 9 dependency vulnerabilities via lockfile (f12fc20)
+
+### 🔧 Chores
+
+- **deps-dev:** bump tsx from 4.23.8 to 4.23.12 (#43) (3e1e56e)
+- **deps-dev:** bump @playwright/test from 1.62.0 to 1.62.1 (#34) (f1ce582)
+- **deps-dev:** bump eslint-config-next from 16.2.12 to 16.3.0 (#36) (f6dc1fc)
+- **deps:** bump @stellar/stellar-sdk from 16.0.0 to 16.2.0 (#38) (158019e)
+- **deps-dev:** bump tsx from 4.23.1 to 4.23.8 (#39) (ddd3a6a)
+- **deps:** bump react and @types/react (#41) (ad28ae4)
+- remove agent instruction files from public repo (c665015)
+- **deps-dev:** bump tsx from 4.22.4 to 4.23.1 (#26) (bf221ff)
+- **deps-dev:** bump @tailwindcss/postcss from 4.3.1 to 4.3.3 (#27) (8422c7e)
+- **deps-dev:** bump tailwindcss from 4.3.1 to 4.3.3 (#28) (f7d2078)
+- **deps-dev:** bump @playwright/test from 1.61.0 to 1.62.0 (#29) (ed57955)
+- **deps-dev:** bump eslint-config-next from 16.2.9 to 16.2.12 (#30) (f81690b)
+- **deps:** bump next from 16.2.9 to 16.2.12 (#33) (d3c0b4b)
+
+### 📝 Documentation
+
+- **readme:** link the hook contract ID to stellar.expert (b2c13aa)
+- **readme:** point judges at the one-click on-chain verify (5a1fe81)
+
 ## [1.7.0](../../compare/v1.6.0...v1.7.0) (2026-07-02)
 
 ### 🚀 Features
